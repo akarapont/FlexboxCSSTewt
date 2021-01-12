@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                    body {
+                        padding: 0;
+                        margin: 0;
+                    }
+                
+                * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                    border: 0 solid transparent;
+                    font-size: 100%;
+                    font-weight: normal;
+                    font-style: normal;
+                    list-style: none;
+                }
+                
+                /*
+                 aspectRatio
+                 cal = 300 / 20 * 13 = 195px
+                 percentage = 195 / 300 * 100 = 65%
+                 */
+                .image-option {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    max-width: 100%;
+                    background-image: url('https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png');
+                    padding-bottom: 65%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                
+                .icon {
+                    display: inline-block;
+                    position: relative;
+                    overflow: hidden;
+                    vertical-align: baseline;
+                    background-image: url('https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png');
+                    width: 1em;
+                    height: 1em;
+                    background-repeat: no-repeat center;
+                    background-size: contain;
+                }
+                </style>
+                </head>
+    <body>
+        
+        <!-- Bubble -->
+        <div style="
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;">
+            
+            <!-- Hero -->
+            <div style="
+                display: flex;
+                width: 100%;
+                max-width: 100%;
+                flex-direction: column;">
+                
+                <span class="image-option"></span>
+            </div>
+            
+            <!-- Body -->
+            <div style="
+                display: flex;
+                padding-bottom: 10px;
+                padding: 10px;
+                width: 100%;
+                max-width: 100%;">
+                
+                <!-- Box Vertical -->
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    max-width: 100%;
+                    background-color: white;">
+                    
+                    <!-- Text component -->
+                    <div style="
+                        display: -webkit-box;
+                        flex: none;
+                        flex-basis: auto;
+                        margin-top: 0;
+                        position: relative;
+                        width: auto;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;">
+                        <p>Brown Cafe</p>
+                    </div>
+                    
+                    <!-- Box baseline -->
+                    <div style="
+                        display: -webkit-box;
+                        flex-direction: row;
+                        flex: none;
+                        flex-basis: auto;
+                        align-items: baseline;
+                        overflow: hidden;
+                        position: relative;
+                        min-width: 0;
+                        max-width: 100%;
+                        background-color: white;">
+                        <div>
+                            <span class="icon"></span>
+                        </div>
+                        
+                        <div>
+                            <span class="icon"></span>
+                        </div>
+                        
+                        <div>
+                            <span class="icon"></span>
+                        </div>
+                        
+                        <div>
+                            <span class="icon"></span>
+                        </div>
+                        
+                        <div style="
+                            display: flex;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            font-size: 14px;
+                            white-space: nowrap;">
+                            <p>4.0</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Box Vertical-->
+                    <div style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        width: 100%;
+                        max-width: 100%;
+                        background-color: white;">
+                        
+                        <!-- Box baseline-->
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            flex: none;
+                            flex-basis: auto;
+                            align-items: baseline;
+                            overflow: hidden;
+                            position: relative;
+                            min-width: 0;
+                            max-width: 100%;
+                            background-color: aquamarine;">
+                            
+                            <div style="
+                                display: flex;
+                                flex-grow: 1;
+                                flex: 1;
+                                min-width: 0;
+                                max-width: 100%;
+                                background-color: chartreuse;">
+                                <p style="
+                                font-size: 14px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;">Place</p>
+                            </div>
+                            
+                            <div style="
+                                display: flex;
+                                flex: 5;
+                                flex-grow: 5;
+                                min-width: 0;
+                                max-width: 100%;
+                                margin-left: 4px;">
+                                <p style="
+                                font-size: 14px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: normal;">Miraina Tower, 4-1-6 Shinjuku, Tokyo</p>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Box baseline-->
+                        <div style="
+                            display: -webkit-box;
+                            flex-direction: row;
+                            -webkit-box-flex: 0;
+                            flex: none;
+                            flex-basis: auto;
+                            align-items: baseline;
+                            overflow: hidden;
+                            position: relative;
+                            min-width: 0;
+                            max-width: 100%;">
+                            
+                            <div style="
+                                display: flex;
+                                -webkit-box-flex: 1!important;
+                                flex: 1 0 0;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                font-size: 14px;
+                                white-space: nowrap;">
+                                <p>Time</p>
+                            </div>
+                            
+                            <div style="
+                                display: flex;
+                                flex: 1 0 0;
+                                flex-grow: 5;
+                                -webkit-box-flex: 5;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                font-size: 14px;
+                                white-space:normal;">
+                                <p>10:00 - 23:00</p>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+    </body>
+</html>

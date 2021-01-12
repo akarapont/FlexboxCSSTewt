@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09FA9079AF5408230D8A1416 /* Pods_FlexboxCSSTewt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5415A487A5443F9F3E597E22 /* Pods_FlexboxCSSTewt.framework */; };
+		32579A1025A6E60600BDB442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A0F25A6E60600BDB442 /* AppDelegate.swift */; };
+		32579A1225A6E60600BDB442 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A1125A6E60600BDB442 /* SceneDelegate.swift */; };
+		32579A1425A6E60600BDB442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A1325A6E60600BDB442 /* ViewController.swift */; };
+		32579A1725A6E60600BDB442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32579A1525A6E60600BDB442 /* Main.storyboard */; };
+		32579A1925A6E60800BDB442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32579A1825A6E60800BDB442 /* Assets.xcassets */; };
+		32579A1C25A6E60800BDB442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32579A1A25A6E60800BDB442 /* LaunchScreen.storyboard */; };
+		32579A2725A6E60800BDB442 /* FlexboxCSSTewtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A2625A6E60800BDB442 /* FlexboxCSSTewtTests.swift */; };
+		32579A3225A6E60900BDB442 /* FlexboxCSSTewtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A3125A6E60900BDB442 /* FlexboxCSSTewtUITests.swift */; };
+		32579A4625A6E86100BDB442 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 32579A4325A6E86100BDB442 /* style.css */; };
+		32579A4725A6E86100BDB442 /* flex_message.html in Resources */ = {isa = PBXBuildFile; fileRef = 32579A4425A6E86100BDB442 /* flex_message.html */; };
+		32579A4825A6E86100BDB442 /* playground.html in Resources */ = {isa = PBXBuildFile; fileRef = 32579A4525A6E86100BDB442 /* playground.html */; };
+		32579A5925A6E8BC00BDB442 /* CollectionViewWebViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A5825A6E8BC00BDB442 /* CollectionViewWebViewCell.swift */; };
+		32579A6825A6FFB700BDB442 /* TestWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A6725A6FFB700BDB442 /* TestWebViewViewController.swift */; };
+		32C77F3625A868DE00077624 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 32C77F3525A868DE00077624 /* test.html */; };
+		8A18F02DE73DCF38BE752DB4 /* Pods_FlexboxCSSTewtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953ECB5656C7BB9373C8511D /* Pods_FlexboxCSSTewtUITests.framework */; };
+		F9B57F8243D44816CBBCC011 /* Pods_FlexboxCSSTewtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE456D44B90BC8E398999747 /* Pods_FlexboxCSSTewtTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32579A2325A6E60800BDB442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32579A0425A6E60600BDB442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32579A0B25A6E60600BDB442;
+			remoteInfo = FlexboxCSSTewt;
+		};
+		32579A2E25A6E60900BDB442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32579A0425A6E60600BDB442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32579A0B25A6E60600BDB442;
+			remoteInfo = FlexboxCSSTewt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2326A5B5BA40BA9CE34FCE1B /* Pods-FlexboxCSSTewt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewt.release.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt.release.xcconfig"; sourceTree = "<group>"; };
+		32579A0C25A6E60600BDB442 /* FlexboxCSSTewt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexboxCSSTewt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32579A0F25A6E60600BDB442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		32579A1125A6E60600BDB442 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		32579A1325A6E60600BDB442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32579A1625A6E60600BDB442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32579A1825A6E60800BDB442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32579A1B25A6E60800BDB442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32579A1D25A6E60800BDB442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32579A2225A6E60800BDB442 /* FlexboxCSSTewtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexboxCSSTewtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32579A2625A6E60800BDB442 /* FlexboxCSSTewtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexboxCSSTewtTests.swift; sourceTree = "<group>"; };
+		32579A2825A6E60800BDB442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32579A2D25A6E60900BDB442 /* FlexboxCSSTewtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexboxCSSTewtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32579A3125A6E60900BDB442 /* FlexboxCSSTewtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexboxCSSTewtUITests.swift; sourceTree = "<group>"; };
+		32579A3325A6E60900BDB442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32579A4325A6E86100BDB442 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		32579A4425A6E86100BDB442 /* flex_message.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = flex_message.html; sourceTree = "<group>"; };
+		32579A4525A6E86100BDB442 /* playground.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = playground.html; sourceTree = "<group>"; };
+		32579A5825A6E8BC00BDB442 /* CollectionViewWebViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewWebViewCell.swift; sourceTree = "<group>"; };
+		32579A6725A6FFB700BDB442 /* TestWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWebViewViewController.swift; sourceTree = "<group>"; };
+		32C77F3525A868DE00077624 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		5415A487A5443F9F3E597E22 /* Pods_FlexboxCSSTewt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexboxCSSTewt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		953ECB5656C7BB9373C8511D /* Pods_FlexboxCSSTewtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexboxCSSTewtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5FC0ABF1242EAAD47DFD5BE /* Pods-FlexboxCSSTewtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtUITests.release.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CCF21776C2DF7D4381A0B1D8 /* Pods-FlexboxCSSTewtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtTests.release.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.release.xcconfig"; sourceTree = "<group>"; };
+		DCF482E9AAC003DB0B62C81D /* Pods-FlexboxCSSTewtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtTests.debug.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE456D44B90BC8E398999747 /* Pods_FlexboxCSSTewtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexboxCSSTewtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F474F65BFA3AECA51B2476F0 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtUITests.debug.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F94C1127025A7CC413E0D852 /* Pods-FlexboxCSSTewt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewt.debug.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32579A0925A6E60600BDB442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09FA9079AF5408230D8A1416 /* Pods_FlexboxCSSTewt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A1F25A6E60800BDB442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B57F8243D44816CBBCC011 /* Pods_FlexboxCSSTewtTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A2A25A6E60900BDB442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A18F02DE73DCF38BE752DB4 /* Pods_FlexboxCSSTewtUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32579A0325A6E60600BDB442 = {
+			isa = PBXGroup;
+			children = (
+				32579A0E25A6E60600BDB442 /* FlexboxCSSTewt */,
+				32579A2525A6E60800BDB442 /* FlexboxCSSTewtTests */,
+				32579A3025A6E60900BDB442 /* FlexboxCSSTewtUITests */,
+				32579A0D25A6E60600BDB442 /* Products */,
+				AD08ECE2E27001E81C0AD876 /* Pods */,
+				C0C0E45E66181C91AABBCC52 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		32579A0D25A6E60600BDB442 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32579A0C25A6E60600BDB442 /* FlexboxCSSTewt.app */,
+				32579A2225A6E60800BDB442 /* FlexboxCSSTewtTests.xctest */,
+				32579A2D25A6E60900BDB442 /* FlexboxCSSTewtUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32579A0E25A6E60600BDB442 /* FlexboxCSSTewt */ = {
+			isa = PBXGroup;
+			children = (
+				32579A5725A6E8AC00BDB442 /* Cell */,
+				32579A4225A6E86100BDB442 /* flex web view */,
+				32579A0F25A6E60600BDB442 /* AppDelegate.swift */,
+				32579A1125A6E60600BDB442 /* SceneDelegate.swift */,
+				32579A1325A6E60600BDB442 /* ViewController.swift */,
+				32579A6725A6FFB700BDB442 /* TestWebViewViewController.swift */,
+				32579A1525A6E60600BDB442 /* Main.storyboard */,
+				32579A1825A6E60800BDB442 /* Assets.xcassets */,
+				32579A1A25A6E60800BDB442 /* LaunchScreen.storyboard */,
+				32579A1D25A6E60800BDB442 /* Info.plist */,
+			);
+			path = FlexboxCSSTewt;
+			sourceTree = "<group>";
+		};
+		32579A2525A6E60800BDB442 /* FlexboxCSSTewtTests */ = {
+			isa = PBXGroup;
+			children = (
+				32579A2625A6E60800BDB442 /* FlexboxCSSTewtTests.swift */,
+				32579A2825A6E60800BDB442 /* Info.plist */,
+			);
+			path = FlexboxCSSTewtTests;
+			sourceTree = "<group>";
+		};
+		32579A3025A6E60900BDB442 /* FlexboxCSSTewtUITests */ = {
+			isa = PBXGroup;
+			children = (
+				32579A3125A6E60900BDB442 /* FlexboxCSSTewtUITests.swift */,
+				32579A3325A6E60900BDB442 /* Info.plist */,
+			);
+			path = FlexboxCSSTewtUITests;
+			sourceTree = "<group>";
+		};
+		32579A4225A6E86100BDB442 /* flex web view */ = {
+			isa = PBXGroup;
+			children = (
+				32579A4325A6E86100BDB442 /* style.css */,
+				32579A4425A6E86100BDB442 /* flex_message.html */,
+				32579A4525A6E86100BDB442 /* playground.html */,
+				32C77F3525A868DE00077624 /* test.html */,
+			);
+			path = "flex web view";
+			sourceTree = "<group>";
+		};
+		32579A5725A6E8AC00BDB442 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32579A5825A6E8BC00BDB442 /* CollectionViewWebViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AD08ECE2E27001E81C0AD876 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F94C1127025A7CC413E0D852 /* Pods-FlexboxCSSTewt.debug.xcconfig */,
+				2326A5B5BA40BA9CE34FCE1B /* Pods-FlexboxCSSTewt.release.xcconfig */,
+				DCF482E9AAC003DB0B62C81D /* Pods-FlexboxCSSTewtTests.debug.xcconfig */,
+				CCF21776C2DF7D4381A0B1D8 /* Pods-FlexboxCSSTewtTests.release.xcconfig */,
+				F474F65BFA3AECA51B2476F0 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */,
+				A5FC0ABF1242EAAD47DFD5BE /* Pods-FlexboxCSSTewtUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C0C0E45E66181C91AABBCC52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5415A487A5443F9F3E597E22 /* Pods_FlexboxCSSTewt.framework */,
+				EE456D44B90BC8E398999747 /* Pods_FlexboxCSSTewtTests.framework */,
+				953ECB5656C7BB9373C8511D /* Pods_FlexboxCSSTewtUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32579A0B25A6E60600BDB442 /* FlexboxCSSTewt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32579A3625A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewt" */;
+			buildPhases = (
+				DF19BEF1ED8DCB425A0A007E /* [CP] Check Pods Manifest.lock */,
+				32579A0825A6E60600BDB442 /* Sources */,
+				32579A0925A6E60600BDB442 /* Frameworks */,
+				32579A0A25A6E60600BDB442 /* Resources */,
+				00523C84AEB503B94BB066F0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlexboxCSSTewt;
+			productName = FlexboxCSSTewt;
+			productReference = 32579A0C25A6E60600BDB442 /* FlexboxCSSTewt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32579A2125A6E60800BDB442 /* FlexboxCSSTewtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32579A3925A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewtTests" */;
+			buildPhases = (
+				E8C32679C71777B0CD89806D /* [CP] Check Pods Manifest.lock */,
+				32579A1E25A6E60800BDB442 /* Sources */,
+				32579A1F25A6E60800BDB442 /* Frameworks */,
+				32579A2025A6E60800BDB442 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32579A2425A6E60800BDB442 /* PBXTargetDependency */,
+			);
+			name = FlexboxCSSTewtTests;
+			productName = FlexboxCSSTewtTests;
+			productReference = 32579A2225A6E60800BDB442 /* FlexboxCSSTewtTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32579A2C25A6E60900BDB442 /* FlexboxCSSTewtUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32579A3C25A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewtUITests" */;
+			buildPhases = (
+				1B3099EFB2734B18FD33AE4A /* [CP] Check Pods Manifest.lock */,
+				32579A2925A6E60900BDB442 /* Sources */,
+				32579A2A25A6E60900BDB442 /* Frameworks */,
+				32579A2B25A6E60900BDB442 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32579A2F25A6E60900BDB442 /* PBXTargetDependency */,
+			);
+			name = FlexboxCSSTewtUITests;
+			productName = FlexboxCSSTewtUITests;
+			productReference = 32579A2D25A6E60900BDB442 /* FlexboxCSSTewtUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32579A0425A6E60600BDB442 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					32579A0B25A6E60600BDB442 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					32579A2125A6E60800BDB442 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 32579A0B25A6E60600BDB442;
+					};
+					32579A2C25A6E60900BDB442 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 32579A0B25A6E60600BDB442;
+					};
+				};
+			};
+			buildConfigurationList = 32579A0725A6E60600BDB442 /* Build configuration list for PBXProject "FlexboxCSSTewt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32579A0325A6E60600BDB442;
+			productRefGroup = 32579A0D25A6E60600BDB442 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32579A0B25A6E60600BDB442 /* FlexboxCSSTewt */,
+				32579A2125A6E60800BDB442 /* FlexboxCSSTewtTests */,
+				32579A2C25A6E60900BDB442 /* FlexboxCSSTewtUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32579A0A25A6E60600BDB442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C77F3625A868DE00077624 /* test.html in Resources */,
+				32579A1C25A6E60800BDB442 /* LaunchScreen.storyboard in Resources */,
+				32579A4625A6E86100BDB442 /* style.css in Resources */,
+				32579A1925A6E60800BDB442 /* Assets.xcassets in Resources */,
+				32579A1725A6E60600BDB442 /* Main.storyboard in Resources */,
+				32579A4725A6E86100BDB442 /* flex_message.html in Resources */,
+				32579A4825A6E86100BDB442 /* playground.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A2025A6E60800BDB442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A2B25A6E60900BDB442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00523C84AEB503B94BB066F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B3099EFB2734B18FD33AE4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexboxCSSTewtUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF19BEF1ED8DCB425A0A007E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexboxCSSTewt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C32679C71777B0CD89806D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexboxCSSTewtTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32579A0825A6E60600BDB442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32579A1425A6E60600BDB442 /* ViewController.swift in Sources */,
+				32579A1025A6E60600BDB442 /* AppDelegate.swift in Sources */,
+				32579A5925A6E8BC00BDB442 /* CollectionViewWebViewCell.swift in Sources */,
+				32579A1225A6E60600BDB442 /* SceneDelegate.swift in Sources */,
+				32579A6825A6FFB700BDB442 /* TestWebViewViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A1E25A6E60800BDB442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32579A2725A6E60800BDB442 /* FlexboxCSSTewtTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32579A2925A6E60900BDB442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32579A3225A6E60900BDB442 /* FlexboxCSSTewtUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32579A2425A6E60800BDB442 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32579A0B25A6E60600BDB442 /* FlexboxCSSTewt */;
+			targetProxy = 32579A2325A6E60800BDB442 /* PBXContainerItemProxy */;
+		};
+		32579A2F25A6E60900BDB442 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32579A0B25A6E60600BDB442 /* FlexboxCSSTewt */;
+			targetProxy = 32579A2E25A6E60900BDB442 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		32579A1525A6E60600BDB442 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32579A1625A6E60600BDB442 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		32579A1A25A6E60800BDB442 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32579A1B25A6E60800BDB442 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32579A3425A6E60900BDB442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32579A3525A6E60900BDB442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32579A3725A6E60900BDB442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F94C1127025A7CC413E0D852 /* Pods-FlexboxCSSTewt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32579A3825A6E60900BDB442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2326A5B5BA40BA9CE34FCE1B /* Pods-FlexboxCSSTewt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		32579A3A25A6E60900BDB442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCF482E9AAC003DB0B62C81D /* Pods-FlexboxCSSTewtTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewtTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexboxCSSTewt.app/FlexboxCSSTewt";
+			};
+			name = Debug;
+		};
+		32579A3B25A6E60900BDB442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCF21776C2DF7D4381A0B1D8 /* Pods-FlexboxCSSTewtTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewtTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexboxCSSTewt.app/FlexboxCSSTewt";
+			};
+			name = Release;
+		};
+		32579A3D25A6E60900BDB442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F474F65BFA3AECA51B2476F0 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewtUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlexboxCSSTewt;
+			};
+			name = Debug;
+		};
+		32579A3E25A6E60900BDB442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5FC0ABF1242EAAD47DFD5BE /* Pods-FlexboxCSSTewtUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 542EU4SW6T;
+				INFOPLIST_FILE = FlexboxCSSTewtUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.clicknext.FlexboxCSSTewtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlexboxCSSTewt;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32579A0725A6E60600BDB442 /* Build configuration list for PBXProject "FlexboxCSSTewt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32579A3425A6E60900BDB442 /* Debug */,
+				32579A3525A6E60900BDB442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32579A3625A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32579A3725A6E60900BDB442 /* Debug */,
+				32579A3825A6E60900BDB442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32579A3925A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32579A3A25A6E60900BDB442 /* Debug */,
+				32579A3B25A6E60900BDB442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32579A3C25A6E60900BDB442 /* Build configuration list for PBXNativeTarget "FlexboxCSSTewtUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32579A3D25A6E60900BDB442 /* Debug */,
+				32579A3E25A6E60900BDB442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32579A0425A6E60600BDB442 /* Project object */;
+}

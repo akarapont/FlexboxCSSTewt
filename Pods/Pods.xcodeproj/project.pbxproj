@@ -1,0 +1,928 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10B3D96799D71FBDA325BFD4AD004973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		11F5D2AD4C7A33B040FF0A217FA8110B /* Pods-FlexboxCSSTewtUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E1E4862309684C94AE233C12E41049 /* Pods-FlexboxCSSTewtUITests-dummy.m */; };
+		1942F7D3B7722A5637C3FC0BE44B1E6C /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */; };
+		31FFD6A64249CFEDE67B25BA8A7122C3 /* Pods-FlexboxCSSTewtTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF517642F8B440E81647FBD011A8345 /* Pods-FlexboxCSSTewtTests-dummy.m */; };
+		33D6F936561A6C6D83AB805564BEE8AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3D7A1B2A36FA9AAA98D9ADB53405CFE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		75BA9CF819016D2BFDBBFE071E625E7B /* Pods-FlexboxCSSTewt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8CB80FDD0F7B25DD5F0F8C47CF22C /* Pods-FlexboxCSSTewt-dummy.m */; };
+		7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */; };
+		AABA488C3CD3F48705E7DCD1132BCB92 /* Pods-FlexboxCSSTewtTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B42D82EEB4FF33CC9D3CD493E11518B /* Pods-FlexboxCSSTewtTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C297AC9431379391C114794AFD4F9778 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		DB94522FBB9865A3EB159A9AF5C2EC2F /* Pods-FlexboxCSSTewtUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9441B213201F3A91B19A6CF617CBCB76 /* Pods-FlexboxCSSTewtUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5AB323DFBB6A9F804A88CDD3FC2E73F /* Pods-FlexboxCSSTewt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD35762E0CE96951DF08599FC6AA75E3 /* Pods-FlexboxCSSTewt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		546C9DF77DB34F5B9CB6041DDA1C7CD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11180B2CB77A6379123BF889935DBC58 /* Pods-FlexboxCSSTewt-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewt-acknowledgements.plist"; sourceTree = "<group>"; };
+		1B4DE4D4DAADE631F894E70E3DA59D4B /* Pods-FlexboxCSSTewt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewt.debug.xcconfig"; sourceTree = "<group>"; };
+		3B42D82EEB4FF33CC9D3CD493E11518B /* Pods-FlexboxCSSTewtTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlexboxCSSTewtTests-umbrella.h"; sourceTree = "<group>"; };
+		3DAFD3D368FE7CBF9C96D0EFA197909A /* Pods-FlexboxCSSTewtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		401262B91FD6FB0FFBD650335D13D44C /* Pods-FlexboxCSSTewt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewt.release.xcconfig"; sourceTree = "<group>"; };
+		413FDE25D59783FE7F31C0CB6C715114 /* Pods_FlexboxCSSTewtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexboxCSSTewtUITests.framework; path = "Pods-FlexboxCSSTewtUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E88E441FA36CC98DEE7134D124AECE /* Pods-FlexboxCSSTewt-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlexboxCSSTewt-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4A8C29EBEEBA515DB9E920033EFC2F61 /* Pods-FlexboxCSSTewtUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlexboxCSSTewtUITests.modulemap"; sourceTree = "<group>"; };
+		53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
+		593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		5E346183732C78CDA805732C5302A208 /* Pods-FlexboxCSSTewt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlexboxCSSTewt.modulemap"; sourceTree = "<group>"; };
+		60A5446E3184AC9044FD67AD5C6955CF /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		636B4FCA3A73EA9EE2BEA968E23FCF8A /* Pods-FlexboxCSSTewt-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlexboxCSSTewt-frameworks.sh"; sourceTree = "<group>"; };
+		6A354C76B80E89FBF808D97B0B17C43C /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7FE37C8F65F713BA6680E53003D29FE5 /* Pods-FlexboxCSSTewtTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewtTests-Info.plist"; sourceTree = "<group>"; };
+		85A5729EBF7C97A83E0C434EC8630E18 /* Pods-FlexboxCSSTewtUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewtUITests-Info.plist"; sourceTree = "<group>"; };
+		874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		89D693D8A75E5CD4E7CEBBB42BE9EE5E /* Pods-FlexboxCSSTewtUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlexboxCSSTewtUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A77A68458F92F939CF8A01B33D36D0F /* Pods-FlexboxCSSTewtTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlexboxCSSTewtTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		91BE166F0D2A5D83493439BE3681BCC3 /* Pods-FlexboxCSSTewtTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlexboxCSSTewtTests.modulemap"; sourceTree = "<group>"; };
+		9441B213201F3A91B19A6CF617CBCB76 /* Pods-FlexboxCSSTewtUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlexboxCSSTewtUITests-umbrella.h"; sourceTree = "<group>"; };
+		99D3708B1CE05AE41444B958E0344457 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewtUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		A0A8BC5F661FBCD7B34B158BCE13EBC5 /* Pods_FlexboxCSSTewtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexboxCSSTewtTests.framework; path = "Pods-FlexboxCSSTewtTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF517642F8B440E81647FBD011A8345 /* Pods-FlexboxCSSTewtTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexboxCSSTewtTests-dummy.m"; sourceTree = "<group>"; };
+		AEC513F9F76AF9D84585F861EFCF3236 /* Pods_FlexboxCSSTewt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexboxCSSTewt.framework; path = "Pods-FlexboxCSSTewt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B392E894F8C4E49C4DA5065838D16001 /* Pods-FlexboxCSSTewtUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewtUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C4F296A498A86DC3CEA40CC07646BEFD /* Pods-FlexboxCSSTewt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewt-Info.plist"; sourceTree = "<group>"; };
+		CD35762E0CE96951DF08599FC6AA75E3 /* Pods-FlexboxCSSTewt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlexboxCSSTewt-umbrella.h"; sourceTree = "<group>"; };
+		D245899814B512931E27A1B7BD19418B /* Pods-FlexboxCSSTewtTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexboxCSSTewtTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4D8CB80FDD0F7B25DD5F0F8C47CF22C /* Pods-FlexboxCSSTewt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexboxCSSTewt-dummy.m"; sourceTree = "<group>"; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E1E4862309684C94AE233C12E41049 /* Pods-FlexboxCSSTewtUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexboxCSSTewtUITests-dummy.m"; sourceTree = "<group>"; };
+		E4A0FD389D173F56FBDB8A357093095A /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		EB0C1F0A72954F79F0B0FF651CF04964 /* Pods-FlexboxCSSTewtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewtTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC4E30B6B71CD136C6E58B1ABA59A111 /* Pods-FlexboxCSSTewtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexboxCSSTewtUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16DB9DDE506288A9F6399F89BBECDFC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10B3D96799D71FBDA325BFD4AD004973 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8841EFA67DC3A3EC5BEDDE3920D377A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7A1B2A36FA9AAA98D9ADB53405CFE9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C3B5B0FA795F7F8E42099D7FB237C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33D6F936561A6C6D83AB805564BEE8AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9C5A8DAF4334B670E91B2EC08DBE2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C297AC9431379391C114794AFD4F9778 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C6A71D462ED46C2A7F74D962134DC74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				519BE3CB838B11312A08D7AC7819F70F /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		519BE3CB838B11312A08D7AC7819F70F /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */,
+				E7117206C2C7669CF7C06E59DE55529D /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		5423AC1BF0494D36BB7984C1747E9579 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1732ED39BD9B8C1E792E51C4F724D47 /* Pods-FlexboxCSSTewt */,
+				B8AF9DBCFBDFAFD74B97A44D7D7CA4DE /* Pods-FlexboxCSSTewtTests */,
+				9F00F97A362E67EDE356B102B0A9BF40 /* Pods-FlexboxCSSTewtUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8E28D5A0FDA6285B38C09045BAD3FEFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEC513F9F76AF9D84585F861EFCF3236 /* Pods_FlexboxCSSTewt.framework */,
+				A0A8BC5F661FBCD7B34B158BCE13EBC5 /* Pods_FlexboxCSSTewtTests.framework */,
+				413FDE25D59783FE7F31C0CB6C715114 /* Pods_FlexboxCSSTewtUITests.framework */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F00F97A362E67EDE356B102B0A9BF40 /* Pods-FlexboxCSSTewtUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A8C29EBEEBA515DB9E920033EFC2F61 /* Pods-FlexboxCSSTewtUITests.modulemap */,
+				89D693D8A75E5CD4E7CEBBB42BE9EE5E /* Pods-FlexboxCSSTewtUITests-acknowledgements.markdown */,
+				B392E894F8C4E49C4DA5065838D16001 /* Pods-FlexboxCSSTewtUITests-acknowledgements.plist */,
+				E3E1E4862309684C94AE233C12E41049 /* Pods-FlexboxCSSTewtUITests-dummy.m */,
+				85A5729EBF7C97A83E0C434EC8630E18 /* Pods-FlexboxCSSTewtUITests-Info.plist */,
+				9441B213201F3A91B19A6CF617CBCB76 /* Pods-FlexboxCSSTewtUITests-umbrella.h */,
+				99D3708B1CE05AE41444B958E0344457 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */,
+				EC4E30B6B71CD136C6E58B1ABA59A111 /* Pods-FlexboxCSSTewtUITests.release.xcconfig */,
+			);
+			name = "Pods-FlexboxCSSTewtUITests";
+			path = "Target Support Files/Pods-FlexboxCSSTewtUITests";
+			sourceTree = "<group>";
+		};
+		B8AF9DBCFBDFAFD74B97A44D7D7CA4DE /* Pods-FlexboxCSSTewtTests */ = {
+			isa = PBXGroup;
+			children = (
+				91BE166F0D2A5D83493439BE3681BCC3 /* Pods-FlexboxCSSTewtTests.modulemap */,
+				8A77A68458F92F939CF8A01B33D36D0F /* Pods-FlexboxCSSTewtTests-acknowledgements.markdown */,
+				D245899814B512931E27A1B7BD19418B /* Pods-FlexboxCSSTewtTests-acknowledgements.plist */,
+				ADF517642F8B440E81647FBD011A8345 /* Pods-FlexboxCSSTewtTests-dummy.m */,
+				7FE37C8F65F713BA6680E53003D29FE5 /* Pods-FlexboxCSSTewtTests-Info.plist */,
+				3B42D82EEB4FF33CC9D3CD493E11518B /* Pods-FlexboxCSSTewtTests-umbrella.h */,
+				3DAFD3D368FE7CBF9C96D0EFA197909A /* Pods-FlexboxCSSTewtTests.debug.xcconfig */,
+				EB0C1F0A72954F79F0B0FF651CF04964 /* Pods-FlexboxCSSTewtTests.release.xcconfig */,
+			);
+			name = "Pods-FlexboxCSSTewtTests";
+			path = "Target Support Files/Pods-FlexboxCSSTewtTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				2C6A71D462ED46C2A7F74D962134DC74 /* Pods */,
+				8E28D5A0FDA6285B38C09045BAD3FEFA /* Products */,
+				5423AC1BF0494D36BB7984C1747E9579 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D1732ED39BD9B8C1E792E51C4F724D47 /* Pods-FlexboxCSSTewt */ = {
+			isa = PBXGroup;
+			children = (
+				5E346183732C78CDA805732C5302A208 /* Pods-FlexboxCSSTewt.modulemap */,
+				46E88E441FA36CC98DEE7134D124AECE /* Pods-FlexboxCSSTewt-acknowledgements.markdown */,
+				11180B2CB77A6379123BF889935DBC58 /* Pods-FlexboxCSSTewt-acknowledgements.plist */,
+				D4D8CB80FDD0F7B25DD5F0F8C47CF22C /* Pods-FlexboxCSSTewt-dummy.m */,
+				636B4FCA3A73EA9EE2BEA968E23FCF8A /* Pods-FlexboxCSSTewt-frameworks.sh */,
+				C4F296A498A86DC3CEA40CC07646BEFD /* Pods-FlexboxCSSTewt-Info.plist */,
+				CD35762E0CE96951DF08599FC6AA75E3 /* Pods-FlexboxCSSTewt-umbrella.h */,
+				1B4DE4D4DAADE631F894E70E3DA59D4B /* Pods-FlexboxCSSTewt.debug.xcconfig */,
+				401262B91FD6FB0FFBD650335D13D44C /* Pods-FlexboxCSSTewt.release.xcconfig */,
+			);
+			name = "Pods-FlexboxCSSTewt";
+			path = "Target Support Files/Pods-FlexboxCSSTewt";
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7117206C2C7669CF7C06E59DE55529D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0FD389D173F56FBDB8A357093095A /* SwiftyJSON.modulemap */,
+				593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */,
+				60A5446E3184AC9044FD67AD5C6955CF /* SwiftyJSON-Info.plist */,
+				6A354C76B80E89FBF808D97B0B17C43C /* SwiftyJSON-prefix.pch */,
+				A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */,
+				F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */,
+				53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15C96547CA1CE6C3627CC8E6E1EEE076 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB94522FBB9865A3EB159A9AF5C2EC2F /* Pods-FlexboxCSSTewtUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7DD627DB5C5AD636646E57B685AFB2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1942F7D3B7722A5637C3FC0BE44B1E6C /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E0B15593AAA55A683F9CA7C4EA389A0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5AB323DFBB6A9F804A88CDD3FC2E73F /* Pods-FlexboxCSSTewt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5018CB674A20E6A21C1E97B4300ACC45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AABA488C3CD3F48705E7DCD1132BCB92 /* Pods-FlexboxCSSTewtTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36052E1FA155E18EA72F5913B9DFE7F0 /* Pods-FlexboxCSSTewtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 688EEF1A713B0C88FEE0BF554F1144A4 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewtTests" */;
+			buildPhases = (
+				5018CB674A20E6A21C1E97B4300ACC45 /* Headers */,
+				F278B16BB6B73E3BEBDACBF7EBB4309A /* Sources */,
+				A6C3B5B0FA795F7F8E42099D7FB237C6 /* Frameworks */,
+				A07103A56D0EC1E6387CBB1467B5B6DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlexboxCSSTewtTests";
+			productName = "Pods-FlexboxCSSTewtTests";
+			productReference = A0A8BC5F661FBCD7B34B158BCE13EBC5 /* Pods_FlexboxCSSTewtTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7B02D1D795F0F82E011AEC2593BA0B9B /* Pods-FlexboxCSSTewtUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 508E0CC8AD2CF7D460BD2B328D446671 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewtUITests" */;
+			buildPhases = (
+				15C96547CA1CE6C3627CC8E6E1EEE076 /* Headers */,
+				C2DD8F6F555A8B4C2B2227F17722F24E /* Sources */,
+				16DB9DDE506288A9F6399F89BBECDFC4 /* Frameworks */,
+				8A66221F7B0DCF5EEFC316E4D4799198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlexboxCSSTewtUITests";
+			productName = "Pods-FlexboxCSSTewtUITests";
+			productReference = 413FDE25D59783FE7F31C0CB6C715114 /* Pods_FlexboxCSSTewtUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8523E55F7EB45AC7D989B9755761C8FC /* Pods-FlexboxCSSTewt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF5AAF833A7EB0B6135BD9383292B063 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewt" */;
+			buildPhases = (
+				4E0B15593AAA55A683F9CA7C4EA389A0 /* Headers */,
+				C581AE80DB916625913F7FDD57D2BF49 /* Sources */,
+				8841EFA67DC3A3EC5BEDDE3920D377A5 /* Frameworks */,
+				30DC7E05A338D6F863D585502DDCC033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B93F2568084F45E743162165D8D9DCD9 /* PBXTargetDependency */,
+			);
+			name = "Pods-FlexboxCSSTewt";
+			productName = "Pods-FlexboxCSSTewt";
+			productReference = AEC513F9F76AF9D84585F861EFCF3236 /* Pods_FlexboxCSSTewt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62468BF9C7EDA172E951A24083C3ECA7 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				3D7DD627DB5C5AD636646E57B685AFB2 /* Headers */,
+				1700C451C98D9DCECBEDFC5E351C5A9E /* Sources */,
+				AD9C5A8DAF4334B670E91B2EC08DBE2C /* Frameworks */,
+				D098F7F0080A87A1F472C81FC2F85528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8E28D5A0FDA6285B38C09045BAD3FEFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8523E55F7EB45AC7D989B9755761C8FC /* Pods-FlexboxCSSTewt */,
+				36052E1FA155E18EA72F5913B9DFE7F0 /* Pods-FlexboxCSSTewtTests */,
+				7B02D1D795F0F82E011AEC2593BA0B9B /* Pods-FlexboxCSSTewtUITests */,
+				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30DC7E05A338D6F863D585502DDCC033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66221F7B0DCF5EEFC316E4D4799198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07103A56D0EC1E6387CBB1467B5B6DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D098F7F0080A87A1F472C81FC2F85528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1700C451C98D9DCECBEDFC5E351C5A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */,
+				7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DD8F6F555A8B4C2B2227F17722F24E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F5D2AD4C7A33B040FF0A217FA8110B /* Pods-FlexboxCSSTewtUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C581AE80DB916625913F7FDD57D2BF49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BA9CF819016D2BFDBBFE071E625E7B /* Pods-FlexboxCSSTewt-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F278B16BB6B73E3BEBDACBF7EBB4309A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31FFD6A64249CFEDE67B25BA8A7122C3 /* Pods-FlexboxCSSTewtTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B93F2568084F45E743162165D8D9DCD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = 546C9DF77DB34F5B9CB6041DDA1C7CD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4EC53C3A48D0210B4F0B67E4E8603C57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401262B91FD6FB0FFBD650335D13D44C /* Pods-FlexboxCSSTewt.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4F131E08B889F20A955EC92EDA5122E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DAFD3D368FE7CBF9C96D0EFA197909A /* Pods-FlexboxCSSTewtTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		501C4DDF76F727E13770D67E891EDEF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56355A48E7AD1B99DFE8B36E38B71417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99D3708B1CE05AE41444B958E0344457 /* Pods-FlexboxCSSTewtUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A245CCDAB8B49672C7423DC51C5B800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB0C1F0A72954F79F0B0FF651CF04964 /* Pods-FlexboxCSSTewtTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		961F8B86E4CFD931354AF3A653993CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC4E30B6B71CD136C6E58B1ABA59A111 /* Pods-FlexboxCSSTewtUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewtUITests/Pods-FlexboxCSSTewtUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A6D1856327C32BF7B667BB2BEEAC10FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFDD7A64FBADE835BFB90992C2C8A3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B4DE4D4DAADE631F894E70E3DA59D4B /* Pods-FlexboxCSSTewt.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlexboxCSSTewt/Pods-FlexboxCSSTewt.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		508E0CC8AD2CF7D460BD2B328D446671 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewtUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56355A48E7AD1B99DFE8B36E38B71417 /* Debug */,
+				961F8B86E4CFD931354AF3A653993CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62468BF9C7EDA172E951A24083C3ECA7 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D1856327C32BF7B667BB2BEEAC10FA /* Debug */,
+				501C4DDF76F727E13770D67E891EDEF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		688EEF1A713B0C88FEE0BF554F1144A4 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F131E08B889F20A955EC92EDA5122E8 /* Debug */,
+				7A245CCDAB8B49672C7423DC51C5B800 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF5AAF833A7EB0B6135BD9383292B063 /* Build configuration list for PBXNativeTarget "Pods-FlexboxCSSTewt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFDD7A64FBADE835BFB90992C2C8A3D5 /* Debug */,
+				4EC53C3A48D0210B4F0B67E4E8603C57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

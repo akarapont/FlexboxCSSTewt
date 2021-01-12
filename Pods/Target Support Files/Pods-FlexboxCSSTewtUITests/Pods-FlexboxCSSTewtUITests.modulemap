@@ -1,0 +1,6 @@
+framework module Pods_FlexboxCSSTewtUITests {
+  umbrella header "Pods-FlexboxCSSTewtUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
