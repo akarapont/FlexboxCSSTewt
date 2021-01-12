@@ -95,7 +95,7 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 									"type": "text",
 									"text": "Place",
 									"size": "sm",
-									"color": "#AAAAAA",
+									"color": "#B02626FF",
 									"flex": 1,
 									"contents": []
 								],
@@ -530,6 +530,8 @@ extension TestWebViewViewController {
 			flex = json["flex"].stringValue
 		}
 		
+		let margin = json["margin"].stringValue
+		
 		let align = json["align"].stringValue
 		switch align {
 		case "start":
@@ -585,17 +587,19 @@ extension TestWebViewViewController {
 		
 		let weight = json["weight"].stringValue
 		
+		let color = json["color"].stringValue
+		
 		let textComponent = """
 		<div class="\(textClass)" style="
 			--text-type-size-value: \(getPxFromSize(size: size));
 			display: flex;
 			flex: \(flex);
-			flex-basis: auto;
 			margin-top: \(offsetTopValue);
 			margin-bottom: \(offsetBottomValue);
 			margin-left: \(offsetLeftValue);
 			margin-right: \(offsetRightValue);
 			position: \(positionValue);
+			color: \(color);
 			width: auto;
 			white-space: \(whiteSpace);">
 			<p style="
@@ -606,15 +610,22 @@ extension TestWebViewViewController {
 	}
 	
 	func getButtonHTML(json: JSON) -> String {
-		let actionUrl = json["action"]["url"].stringValue
-		let actionType = json["action"]["type"].stringValue
 		let actionLabel = json["action"]["label"].stringValue
-		let type = json["type"].stringValue
 		let height = json["height"].stringValue
-		let style = json["style"].stringValue
+		
+		var size = "52px"
+		if height == "sm" {
+			size = "40px"
+		}
+		
+		var positionValue = "relative"
+		let position = json["position"].stringValue
+		if position != "" {
+			positionValue = position
+		}
 		
 		let buttonComponent = """
-		<div class="ButtonType HeightSm ButtonStyleLink">
+		<div class="" style="position: \(positionValue); flex-grow: 1;">
 				<a style="
 					display: inherit;
 					-webkit-box-align: center;
@@ -622,15 +633,16 @@ extension TestWebViewViewController {
 					-webkit-box-pack: center;
 					justify-content: center;
 					width: 100%;
-					height: 52px;
-					padding: 0 16px;
+					height: \(size);
+					padding: 16px;
 					border-radius: 8px;
 					font-size: 16px;
-					color: #42659a;">
+					color: #42659a">
 						<div style="
 						white-space: nowrap;
 						text-overflow: ellipsis;
 						overflow: hidden;
+						text-align: center;
 						max-width: 100%;">\(actionLabel)</div>
 				</a>
 		</div>
