@@ -24,7 +24,7 @@ body {
 	line-height: 1.4;
 	color: #444;
 	font-family: -apple-system, 'BlinkMacSystemFont', Helvetica, Roboto, Sans-Serif;
-	font-size: 16px;
+	font-size: 12px;
 	-webkit-user-select: none;
 	-webkit-text-size-adjust: none;
 }
@@ -33,7 +33,6 @@ a {
 	-webkit-touch-callout: none;
 }
 
-/*
 a:active, a:focus, a:hover, a:link, a:visited {
 	text-decoration: none;
 }
@@ -41,8 +40,6 @@ a:active, a:focus, a:hover, a:link, a:visited {
 b, em, strong {
 	font-weight: bold;
 }
-*/
-
 
 /* Flex Container */
 
@@ -69,8 +66,8 @@ b, em, strong {
 	flex-basis: auto;
 }
 
-.FlexContainer .BlockHero:first-child .ImageType.ImageTypeSizeFull>div>a>span,
-.FlexContainer .BlockHero:last-child .ImageType.ImageTypeSizeFull>div>a>span {
+.FlexContainer .BlockHero:first-child .ImageType.ExFull>div>a>span,
+.FlexContainer .BlockHero:last-child .ImageType.ExFull>div>a>span {
 	overflow: hidden;
 }
 
@@ -80,13 +77,37 @@ b, em, strong {
 .FlexSizeMicro {}
 .FlexSizeNano {}
 
-.FlexContainer .BlockHeader>.BoxType {
+.FlexSizeGiga .FlexContainer .BlockHeader>.BoxType,
+ .FlexSizeMega .FlexContainer .BlockHeader>.BoxType{
 	padding: 20px
 }
 
-.FlexContainer .BlockBody>.BoxType {
+.FlexSizeKilo .FlexContainer .BlockHeader>.BoxType{
+	padding: 13px
+}
+
+.FlexSizeMicro .FlexContainer .BlockHeader>.BoxType,
+.FlexSizeNano .FlexContainer .BlockHeader>.BoxType{
+	padding: 10px
+}
+
+.FlexSizeGiga .FlexContainer .BlockBody>.BoxType,
+.FlexSizeMega .FlexContainer .BlockBody>.BoxType{
 	padding: 20px;
-	padding-top: 19px
+	padding-top: 19px;
+}
+
+.FlexSizeKilo .FlexContainer .BlockHeader>.BoxType{
+   padding: 13px;
+}
+
+.FlexSizeMicro .FlexContainer .BlockHeader>.BoxType,
+.FlexSizeNano .FlexContainer .BlockHeader>.BoxType{
+   padding: 10px;
+}
+
+.FlexContainer .BlockBody.HasFooter>.BoxType {
+	padding-bottom: 10px
 }
 
 .FlexContainer .BlockFooter>.BoxType {
@@ -99,36 +120,6 @@ b, em, strong {
 
 .FlexRTL, [dir="rtl"] {
 	direction: rtl
-}
-
-
-.FlexSizeKilo .FlexContainer .BlockHeader>.BoxType {
-	padding: 13px
-}
-
-.FlexSizeMicro .FlexContainer .BlockHeader>.BoxType,
-.FlexSizeNano .FlexContainer .BlockHeader>.BoxType {
-	padding: 10px
-}
-
-.FlexSizeKilo .FlexContainer .BlockBody>.BoxType {
-	padding: 13px
-}
-
-.FlexSizeMicro .FlexContainer .BlockBody>.BoxType {
-	padding: 10px
-}
-
-.FlexSizeNano .FlexContainer .BlockBody>.BoxType {
-	padding: 10px
-}
-
-.FlexContainer .BlockBody.HasFooter>.BoxType {
-	padding-bottom: 10px
-}
-
-.FlexSizeKilo .FlexContainer .BlockBody.HasFooter>.BoxType {
-	padding-bottom: 17px
 }
 
 .ButtonType, .BoxType, .IconType, .ImageType, .TextType, [class*="SeparatorType"] {
@@ -228,16 +219,12 @@ b, em, strong {
 
 /* BoxType Spacing */
 
-.BoxType.horizontal.BoxTypeSpacing>div {
+.FlexContainer .BoxType.horizontal.BoxTypeSpacing>div {
 	margin-left: var(--box-type-spacing-value)
 }
 
-.BoxType.horizontal.BoxTypeSpacing>div:first-child {
+.FlexContainer .BoxType.horizontal.BoxTypeSpacing>div:first-child {
 	margin-left: 0px;
-}
-
-.BoxType.vertical.BoxTypeSpacing>div {
-	margin-top: var(--box-type-spacing-value)
 }
 
 /* Box  justifyContent */
@@ -301,23 +288,14 @@ b, em, strong {
 	margin-top: 0
 }
 
-.BoxType.horizontal>div.FillerType, .BoxType.horizontal>div.SpacerType, .BoxType.horizontal>div:first-child {
-	margin-left: 0
-}
-
 .BoxType>div.IconType {
 	-webkit-box-flex: 0!important;
 	flex: none!important
 }
 
-.BoxType>div.gravityTop {
-	-webkit-box-pack: start;
-	justify-content: start;
-}
-
 .BoxType>div.gravityCenter {
 	-webkit-box-pack: center;
-	justify-content: center;
+	justify-content: center
 }
 
 .BoxType>div.gravityBottom {
@@ -391,7 +369,7 @@ b, em, strong {
    <div class="SpacerType SpacerTypeSize" style="--spacer-size-value:4px;">
  */
 
-.BoxType.vertical>div.SpacerType.SpacerTypeSize {
+ .BoxType.vertical>div.SpacerType.SpacerTypeSize {
 	height: var(--spacer-type-size-value);
 }
 
@@ -524,6 +502,21 @@ b, em, strong {
 	text-align: end;
 }
 
+.TextType.GravityTop {
+	-webkit-box-pack: start;
+	justify-content: start;
+}
+
+.TextType.GravityCenter {
+	-webkit-box-pack: center;
+	justify-content: space-around;
+}
+
+.TextType.GravityEnd {
+	-webkit-box-pack: end;
+	justify-content: flex-end;
+}
+
 .TextType.TextTypeSize {
 	font-size: var(--text-type-size-value)
 }
@@ -588,20 +581,15 @@ b, em, strong {
 	vertical-align: baseline;
 }
 
-.IconType.IconTypeSize {
-	font-size: var(--icon-type-size-value);
+/*  width: unit em
+	example = width: 2em
+*/
+.IconType.IconAspectRatio span {
+	width: var(--icon-aspect-ratio-value);
 }
 
-/* IconType Margin (BoxType is horizontal) */
-
-.BoxType.horizontal>div.IconType.IconTypeMargin {
-	margin-left: var(--icon-type-margin-value)!important;
-}
-
-/* IconType Margin (BoxType is vertical) */
-
-.BoxType.vertical>div.IconType.IconTypeMargin {
-	margin-top: var(--icon-type-margin-value)!important;
+.IconType.IconSize {
+	font-size: var(--icon-size-value);
 }
 
 /* Button */
@@ -646,10 +634,6 @@ b, em, strong {
 
 .ButtonType.HeightSm a {
 	height: 40px
-}
-
-.ButtonType.HeightMd a {
-	height: 52px
 }
 
 /* ButtonType Margin (BoxType is horizontal) */
@@ -703,37 +687,10 @@ b, em, strong {
 	background-size: cover
 }
 
-.ImageTypeSizeFull {}
+.ImageSizeFull {}
 
-.ImageType.PositionAbsolute.ImageTypeSizeFull {
+.ImageType.PositionAbsolute.ImageSizeFull {
 	width: 100%
-}
-
-/* ImageType Margin (BoxType is horizontal)  */
-
-.BoxType.horizontal>div.ImageType.ImageTypeMargin {
-	margin-left: var(--image-type-margin-value)!important;
-}
-
-/* ImageType Margin (BoxType is vertical) */
-
-.BoxType.vertical>div.ImageType.ImageTypeMargin {
-	margin-top: var(--image-type-margin-value)!important;
-}
-
-.BoxType>div.alignCenter{
-	-webkit-box-align: center;
-	align-items: center
-}
-
-.BoxType>div.alignStart{
-	-webkit-box-align: start;
-	align-items: flex-start
-}
-
-.BoxType>div.alignEnd {
-	-webkit-box-align: end;
-	align-items: flex-end
 }
 
 .PositionAbsolute {
