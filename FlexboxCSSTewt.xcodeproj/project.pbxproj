@@ -19,6 +19,7 @@
 		32579A5925A6E8BC00BDB442 /* CollectionViewWebViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A5825A6E8BC00BDB442 /* CollectionViewWebViewCell.swift */; };
 		32579A6825A6FFB700BDB442 /* TestWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32579A6725A6FFB700BDB442 /* TestWebViewViewController.swift */; };
 		8A18F02DE73DCF38BE752DB4 /* Pods_FlexboxCSSTewtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953ECB5656C7BB9373C8511D /* Pods_FlexboxCSSTewtUITests.framework */; };
+		F259D08125AEFB6300361FA0 /* JSONStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F259D08025AEFB6300361FA0 /* JSONStub.swift */; };
 		F2F120DB25AD5E90008F29DB /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = F2F120D725AD5E90008F29DB /* test.html */; };
 		F2F120DC25AD5E90008F29DB /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = F2F120D825AD5E90008F29DB /* style.css */; };
 		F2F120DD25AD5E90008F29DB /* flex_message.html in Resources */ = {isa = PBXBuildFile; fileRef = F2F120D925AD5E90008F29DB /* flex_message.html */; };
@@ -67,6 +68,7 @@
 		CCF21776C2DF7D4381A0B1D8 /* Pods-FlexboxCSSTewtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtTests.release.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.release.xcconfig"; sourceTree = "<group>"; };
 		DCF482E9AAC003DB0B62C81D /* Pods-FlexboxCSSTewtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexboxCSSTewtTests.debug.xcconfig"; path = "Target Support Files/Pods-FlexboxCSSTewtTests/Pods-FlexboxCSSTewtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE456D44B90BC8E398999747 /* Pods_FlexboxCSSTewtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexboxCSSTewtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F259D08025AEFB6300361FA0 /* JSONStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStub.swift; sourceTree = "<group>"; };
 		F2F120D725AD5E90008F29DB /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		F2F120D825AD5E90008F29DB /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		F2F120D925AD5E90008F29DB /* flex_message.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = flex_message.html; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				32579A1125A6E60600BDB442 /* SceneDelegate.swift */,
 				32579A1325A6E60600BDB442 /* ViewController.swift */,
 				32579A6725A6FFB700BDB442 /* TestWebViewViewController.swift */,
+				F259D08025AEFB6300361FA0 /* JSONStub.swift */,
 				32579A1525A6E60600BDB442 /* Main.storyboard */,
 				32579A1825A6E60800BDB442 /* Assets.xcassets */,
 				32579A1A25A6E60800BDB442 /* LaunchScreen.storyboard */,
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32579A1425A6E60600BDB442 /* ViewController.swift in Sources */,
+				F259D08125AEFB6300361FA0 /* JSONStub.swift in Sources */,
 				32579A1025A6E60600BDB442 /* AppDelegate.swift in Sources */,
 				32579A5925A6E8BC00BDB442 /* CollectionViewWebViewCell.swift in Sources */,
 				32579A1225A6E60600BDB442 /* SceneDelegate.swift in Sources */,

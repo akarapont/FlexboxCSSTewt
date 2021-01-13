@@ -14,173 +14,7 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 	@IBOutlet weak var wkWebView: WKWebView!
 	@IBOutlet weak var wkWebViewHeightConstraint: NSLayoutConstraint!
 	
-	var flexboxJSONData: JSON =  [
-		"type": "bubble",
-  "hero": [
-	"type": "image",
-	"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png",
-	"size": "full",
-	"aspectRatio": "20:13",
-	"aspectMode": "cover",
-	"action": [
-	  "type": "uri",
-	  "uri": "http://linecorp.com/"
-	]
-  ],
-  "body": [
-	"type": "box",
-	"layout": "vertical",
-	"spacing": "md",
-	"contents": [
-	  [
-		"type": "text",
-		"text": "BROWN'S ADVENTURE\nIN MOVIE",
-		"wrap": true,
-		"weight": "bold",
-		"gravity": "center",
-		"size": "xl"
-	  ],
-	  [
-		"type": "box",
-		"layout": "baseline",
-		"margin": "md",
-		"contents": [
-		  [
-			"type": "icon",
-			"size": "sm",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-		  ],
-		  [
-			"type": "icon",
-			"size": "sm",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-		  ],
-		  [
-			"type": "icon",
-			"size": "sm",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-		  ],
-		  [
-			"type": "icon",
-			"size": "sm",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-		  ],
-		  [
-			"type": "icon",
-			"size": "sm",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-		  ],
-		  [
-			"type": "text",
-			"text": "4.0",
-			"size": "sm",
-			"color": "#999999",
-			"margin": "md",
-			"flex": 0
-		  ]
-		]
-	  ],
-	  [
-		"type": "box",
-		"layout": "vertical",
-		"margin": "lg",
-		"spacing": "sm",
-		"contents": [
-		  [
-			"type": "box",
-			"layout": "baseline",
-			"spacing": "sm",
-			"contents": [
-			  [
-				"type": "text",
-				"text": "Date",
-				"color": "#aaaaaa",
-				"size": "sm",
-				"flex": 1
-			  ],
-			  [
-				"type": "text",
-				"text": "Monday 25, 9:00PM",
-				"wrap": true,
-				"size": "sm",
-				"color": "#666666",
-				"flex": 4
-			  ]
-			]
-		  ],
-		  [
-			"type": "box",
-			"layout": "baseline",
-			"spacing": "sm",
-			"contents": [
-			  [
-				"type": "text",
-				"text": "Place",
-				"color": "#aaaaaa",
-				"size": "sm",
-				"flex": 1
-			  ],
-			  [
-				"type": "text",
-				"text": "7 Floor, No.3",
-				"wrap": true,
-				"color": "#666666",
-				"size": "sm",
-				"flex": 4
-			  ]
-			]
-		  ],
-		  [
-			"type": "box",
-			"layout": "baseline",
-			"spacing": "sm",
-			"contents": [
-			  [
-				"type": "text",
-				"text": "Seats",
-				"color": "#aaaaaa",
-				"size": "sm",
-				"flex": 1
-			  ],
-			  [
-				"type": "text",
-				"text": "C Row, 18 Seat",
-				"wrap": true,
-				"color": "#666666",
-				"size": "sm",
-				"flex": 4
-			  ]
-			]
-		  ]
-		]
-	  ],
-	  [
-		"type": "box",
-		"layout": "vertical",
-		"margin": "xxl",
-		"contents": [
-		  [
-			"type": "spacer"
-		  ],
-		  [
-			"type": "image",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
-			"aspectMode": "cover",
-			"size": "xl"
-		  ],
-		  [
-			"type": "text",
-			"text": "You can enter the theater by using this code instead of a ticket",
-			"color": "#aaaaaa",
-			"wrap": true,
-			"margin": "xxl",
-			"size": "xs"
-		  ]
-		]
-	  ]
-	]
-  ]
-]
+	var flexboxJSONData: JSON =  JSONStub().getJson6()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -291,8 +125,7 @@ extension TestWebViewViewController {
                 <body>
                     <!-- Bubble -->
                     <div class="\(classValue)"
-                    style="
-                    display: flex;
+                    style="display: flex;
                     width: 100%;
                     max-width: 100%;
                     direction: \(direction);
@@ -371,7 +204,7 @@ extension TestWebViewViewController {
 				<div style="
 					display: flex;
 					width: 100%;
-					max-width: 100%;
+					max-width: 100%;flex-direction: column;
 					background-color: \(color);">
 				"""
 				htmlBodyString.append(textStartComponent)
@@ -498,6 +331,9 @@ extension TestWebViewViewController {
 		case "button":
 			contentString.append(getButtonHTML(json: json))
 			break
+		case "separator":
+			contentString.append(getSeparatorHTML(json: json))
+			break
 		default:
 			break
 		}
@@ -507,17 +343,21 @@ extension TestWebViewViewController {
 	func createFlexboxInitBoxType(json: JSON, isInit: Bool = true) -> [String] {
 		let layoutType = json["layout"].stringValue
 		var classText = "BoxType"
+		var margin: String = ""
 		var flexDirection = ""
 		switch layoutType {
 		case "vertical":
 			flexDirection = "column"
 			classText += " vertical"
+			margin = "margin-top: "
 		case "horizontal":
 			flexDirection = "row"
 			classText += " horizontal"
+			margin = "margin-left: "
 		case "baseline":
 			flexDirection = "baseline"
 			classText += " baseline"
+			margin = "margin-left: "
 		default:
 			break
 		}
@@ -526,6 +366,35 @@ extension TestWebViewViewController {
 		let position = json["position"].stringValue
 		if position != "" {
 			positionValue = position
+		}
+		
+		var marginValue = "0px"
+		switch json["margin"].stringValue {
+		case "xs":
+			marginValue = "2px"
+			break
+		case "sm":
+			marginValue = "4px"
+			break
+		case "md":
+			marginValue = "8px"
+			break
+		case "lg":
+			marginValue = "12px"
+			break
+		case "xl":
+			marginValue = "16px"
+			break
+		case "xxl":
+			marginValue = "20px"
+			break
+		default:
+			marginValue = "0px"
+		}
+		
+		var componentMargin:String = ""
+		if margin != "" && marginValue != "" {
+			componentMargin = "\(margin) \(marginValue);"
 		}
 		
 		var boxHTML = [String]()
@@ -582,6 +451,9 @@ extension TestWebViewViewController {
 			case "button":
 				contentHTML.append(getButtonHTML(json: json[i]))
 				break
+			case "separator":
+				contentHTML.append(getSeparatorHTML(json: json[i]))
+				break
 			default:
 				break
 			}
@@ -615,6 +487,65 @@ extension TestWebViewViewController {
 			positionValue = position
 		}
 		
+		var align = "center"
+		switch json["align"].stringValue {
+		case "start":
+			align = "flex-start"
+			break
+		case "center":
+			align = "center"
+			break
+		case "end":
+			align = "flex-end"
+			break
+		default:
+			align = "center"
+			break
+		}
+		
+		var size = "140px"
+		switch json["size"].stringValue {
+		case "full":
+			size = "100%"
+			break
+		case "5xl":
+			size = "240px"
+			break
+		case "4xl":
+			size = "220px"
+			break
+		case "3xl":
+			size = "200px"
+			break
+		case "2xl":
+			size = "180px"
+			break
+		case "xxl":
+			size = "160px"
+			break
+		case "xl":
+			size = "140px"
+			break
+		case "lg":
+			size = "120px"
+			break
+		case "md":
+			size = "90px"
+			break
+		case "sm":
+			size = "80px"
+			break
+		case "xs":
+			size = "60px"
+			break
+		case "xxs":
+			size = "40px"
+			break
+		default:
+			size = "140px"
+			break
+		}
+		
 		let imageComponent = """
 		<div style="
 			 display: block;
@@ -627,7 +558,40 @@ extension TestWebViewViewController {
 			 background-repeat: no-repeat;
 			 background-position: center center;"></div>
 		"""
-		return imageComponent
+		
+		let newimageComponent = """
+		<div style="
+		display: flex;
+		position: \(positionValue);
+		justify-content: \(align);
+		width:100%
+		overflow: hidden;
+		background-color: transparent;">
+			<div style="
+			width: \(size);
+			max-width: 100%">
+				<a style="padding-bottom:\(aspectRatio);
+					display: block;
+					position: relative;
+					width: 100%">
+						<span style=" background-size: \(backgroundSize);
+							display: block;
+							position: absolute;
+							left: 0;
+							right: 0;
+							top: 0;
+							bottom: 0;
+							overflow: hidden;
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-image:url('\(url)');">
+						</span>
+				</a>
+			</div>
+		</div>
+		"""
+		
+		return newimageComponent
 	}
 	
 	func getIconHTML(json: JSON) -> String {
@@ -752,7 +716,10 @@ extension TestWebViewViewController {
 			textClass += " TextTypeSize"
 		}
 		
-		let weight = json["weight"].stringValue
+		var weight = json["weight"].stringValue
+		if weight == "" {
+			weight = "regular"
+		}
 		
 		let color = json["color"].stringValue
 		
@@ -797,25 +764,32 @@ extension TestWebViewViewController {
 			positionValue = position
 		}
 		
+		var backUpColorBackground = "transparent"
 		var color: String = ""
 		switch json["style"].stringValue {
 		case "link":
 			color = "#42659a"
+			backUpColorBackground = "transparent"
 			break
 		case "primary":
 			color = "#ffffff"
+			backUpColorBackground = "#17c950"
 			break
 		case "secondary":
 			color = "#111111"
+			backUpColorBackground = "#dcdfe5"
 			break
 		default:
 			color = "#42659a"
+			backUpColorBackground = "transparent"
 		}
 		
 		var colorBackground: String = json["color"].stringValue
 		if colorBackground == "" {
-			colorBackground = "transparent"
+			colorBackground = backUpColorBackground
 		}
+		
+		let radius = "8px"
 		
 		let buttonComponent = """
 		<div class="" style="position: \(positionValue); flex-grow: 1;">
@@ -828,7 +802,7 @@ extension TestWebViewViewController {
 					width: 100%;
 					height: \(size);
 					padding: 16px;
-					border-radius: 8px;
+					border-radius: \(radius);
 					font-size: 16px;
 					color: \(color);
 					background-color: \(colorBackground)">
@@ -842,6 +816,37 @@ extension TestWebViewViewController {
 		</div>
 		"""
 		return buttonComponent
+	}
+	
+	func getSeparatorHTML(json: JSON) -> String {
+		var marginValue = "0px"
+		let margin = json["margin"].stringValue
+		switch margin {
+		case "xs":
+			marginValue = "2px"
+			break
+		case "sm":
+			marginValue = "4px"
+			break
+		case "md":
+			marginValue = "8px"
+			break
+		case "lg":
+			marginValue = "12px"
+			break
+		case "xl":
+			marginValue = "16px"
+			break
+		case "xxl":
+			marginValue = "20px"
+			break
+		default:
+			marginValue = "0px"
+		}
+		let separatorComponent = """
+				<div style="height: \(marginValue); width: \(marginValue);"> </div>
+		"""
+		return separatorComponent
 	}
 }
 
@@ -889,3 +894,11 @@ extension TestWebViewViewController {
 		}
 	}
 }
+
+
+/*
+	margin
+		vertical = top
+		horizontal = left
+
+*/
