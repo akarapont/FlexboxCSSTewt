@@ -13,164 +13,174 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 	
 	@IBOutlet weak var wkWebView: WKWebView!
 	@IBOutlet weak var wkWebViewHeightConstraint: NSLayoutConstraint!
-	var colour: String? = ""//"Red"
-	var flexboxJSONData: JSON = [
+	
+	var flexboxJSONData: JSON =  [
 		"type": "bubble",
-		"hero": [
-			"type": "image",
-			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-			"size": "full",
-			"aspectRatio": "20:13",
-			"aspectMode": "cover",
-			"action": [
-				"type": "uri",
-				"label": "Line",
-				"uri": "https://linecorp.com/"
-			]
-		],
-		"body": [
+  "hero": [
+	"type": "image",
+	"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png",
+	"size": "full",
+	"aspectRatio": "20:13",
+	"aspectMode": "cover",
+	"action": [
+	  "type": "uri",
+	  "uri": "http://linecorp.com/"
+	]
+  ],
+  "body": [
+	"type": "box",
+	"layout": "vertical",
+	"spacing": "md",
+	"contents": [
+	  [
+		"type": "text",
+		"text": "BROWN'S ADVENTURE\nIN MOVIE",
+		"wrap": true,
+		"weight": "bold",
+		"gravity": "center",
+		"size": "xl"
+	  ],
+	  [
+		"type": "box",
+		"layout": "baseline",
+		"margin": "md",
+		"contents": [
+		  [
+			"type": "icon",
+			"size": "sm",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+		  ],
+		  [
+			"type": "icon",
+			"size": "sm",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+		  ],
+		  [
+			"type": "icon",
+			"size": "sm",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+		  ],
+		  [
+			"type": "icon",
+			"size": "sm",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+		  ],
+		  [
+			"type": "icon",
+			"size": "sm",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+		  ],
+		  [
+			"type": "text",
+			"text": "4.0",
+			"size": "sm",
+			"color": "#999999",
+			"margin": "md",
+			"flex": 0
+		  ]
+		]
+	  ],
+	  [
+		"type": "box",
+		"layout": "vertical",
+		"margin": "lg",
+		"spacing": "sm",
+		"contents": [
+		  [
 			"type": "box",
-			"layout": "vertical",
-			"contents": [
-				[
-					"type": "text",
-					"text": "Brown Cafe",
-					"weight": "bold",
-					"size": "xl",
-					"contents": []
-				],
-				[
-					"type": "box",
-					"layout": "baseline",
-					"margin": "md",
-					"contents": [
-						[
-							"type": "icon",
-							"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-							"size": "sm"
-						],
-						[
-							"type": "icon",
-							"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-							"size": "sm"
-						],
-						[
-							"type": "icon",
-							"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-							"size": "sm"
-						],
-						[
-							"type": "icon",
-							"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-							"size": "sm"
-						],
-						[
-							"type": "icon",
-							"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png",
-							"size": "sm",
-						],
-						[
-							"type": "text",
-							"text": "4.0",
-							"size": "sm",
-							"color": "#999999",
-							"flex": 0,
-							"margin": "md",
-							"contents": []
-						]
-					]
-				],
-				[
-					"type": "box",
-					"layout": "vertical",
-					"spacing": "sm",
-					"margin": "lg",
-					"contents": [
-						[
-							"type": "box",
-							"layout": "baseline",
-							"spacing": "sm",
-							"contents": [
-								[
-									"type": "text",
-									"text": "Place",
-									"size": "sm",
-									"color": "#B02626FF",
-									"flex": 1,
-									"contents": []
-								],
-								[
-									"type": "text",
-									"text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-									"size": "sm",
-									"color": "#666666",
-									"flex": 5,
-									"wrap": true,
-									"contents": []
-								]
-							]
-						],
-						[
-							"type": "box",
-							"layout": "baseline",
-							"spacing": "sm",
-							"contents": [
-								[
-									"type": "text",
-									"text": "Time",
-									"size": "sm",
-									"color": "#AAAAAA",
-									"flex": 1,
-									"contents": []
-								],
-								[
-									"type": "text",
-									"text": "10:00 - 23:00",
-									"size": "sm",
-									"color": "#666666",
-									"flex": 5,
-									"wrap": true,
-									"contents": []
-								]
-							]
-						]
-					]
-				]
-			]
-		],
-		"footer": [
-			"type": "box",
-			"layout": "vertical",
-			"flex": 0,
+			"layout": "baseline",
 			"spacing": "sm",
 			"contents": [
-				[
-					"type": "button",
-					"action": [
-						"type": "uri",
-						"label": "CALL",
-						"uri": "https://linecorp.com"
-					],
-					"height": "sm",
-					"style": "link"
-				],
-				[
-					"type": "button",
-					"action": [
-						"type": "uri",
-						"label": "WEBSITE",
-						"uri": "https://linecorp.com"
-					],
-					"height": "sm",
-					"style": "link"
-				],
-				[
-					"type": "spacer",
-					"size": "sm"
-				]
+			  [
+				"type": "text",
+				"text": "Date",
+				"color": "#aaaaaa",
+				"size": "sm",
+				"flex": 1
+			  ],
+			  [
+				"type": "text",
+				"text": "Monday 25, 9:00PM",
+				"wrap": true,
+				"size": "sm",
+				"color": "#666666",
+				"flex": 4
+			  ]
 			]
+		  ],
+		  [
+			"type": "box",
+			"layout": "baseline",
+			"spacing": "sm",
+			"contents": [
+			  [
+				"type": "text",
+				"text": "Place",
+				"color": "#aaaaaa",
+				"size": "sm",
+				"flex": 1
+			  ],
+			  [
+				"type": "text",
+				"text": "7 Floor, No.3",
+				"wrap": true,
+				"color": "#666666",
+				"size": "sm",
+				"flex": 4
+			  ]
+			]
+		  ],
+		  [
+			"type": "box",
+			"layout": "baseline",
+			"spacing": "sm",
+			"contents": [
+			  [
+				"type": "text",
+				"text": "Seats",
+				"color": "#aaaaaa",
+				"size": "sm",
+				"flex": 1
+			  ],
+			  [
+				"type": "text",
+				"text": "C Row, 18 Seat",
+				"wrap": true,
+				"color": "#666666",
+				"size": "sm",
+				"flex": 4
+			  ]
+			]
+		  ]
 		]
+	  ],
+	  [
+		"type": "box",
+		"layout": "vertical",
+		"margin": "xxl",
+		"contents": [
+		  [
+			"type": "spacer"
+		  ],
+		  [
+			"type": "image",
+			"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
+			"aspectMode": "cover",
+			"size": "xl"
+		  ],
+		  [
+			"type": "text",
+			"text": "You can enter the theater by using this code instead of a ticket",
+			"color": "#aaaaaa",
+			"wrap": true,
+			"margin": "xxl",
+			"size": "xs"
+		  ]
+		]
+	  ]
 	]
+  ]
+]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -196,19 +206,6 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 		}
 		let urlstr = "http://website.com"
 		wkWebView.loadHTMLString(html, baseURL: URL(string: urlstr)!)
-	}
-	
-	
-	func getHexColour() -> String? {
-		if let colour = colour {
-			switch colour {
-			case "Red" : return "#FF0000"
-			case "Green" : return "#00FF00"
-			case "Blue" : return "#0000FF"
-			default  : return nil
-			}
-		}
-		return nil
 	}
 	
 	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -261,26 +258,88 @@ extension TestWebViewViewController {
 	func createHTMLBodyFromJSON(json: JSON) -> String {
 		var htmlBodyString = ""
 		let type = json["type"].stringValue
+		var direction = json["direction"].stringValue
+		if direction == "" {
+			direction = "ltr"
+		}
+		
+		var classValue: String = ""
+		let size = json["size"].stringValue
+		switch size {
+		case "nano":
+			classValue = "FlexSizeNano"
+			break
+		case "micro":
+			classValue = "FlexSizeMicro"
+			break
+		case "kilo":
+			classValue = "FlexSizeKilo"
+			break
+		case "mega":
+			classValue = "FlexSizeMega"
+			break
+		case "giga":
+			classValue = "FlexSizeGiga"
+			break
+		default:
+			classValue = "FlexSizeMega"
+			break
+		}
+		
 		if type == "bubble" {
 			let bodyStartHTMLTag = """
                 <body>
                     <!-- Bubble -->
-                    <div class="FlexSizeMega"
+                    <div class="\(classValue)"
                     style="
                     display: flex;
                     width: 100%;
                     max-width: 100%;
+                    direction: \(direction);
                     flex-direction: column;">
             
             """
 			htmlBodyString.append(bodyStartHTMLTag)
 			
+			let heightSeparator = "1px"
+			
 			//header
 			htmlBodyString.append("<!-- header-->")
 			let headerJSON = json["header"]
 			if headerJSON != JSON.null {
+				var boxSeparator = ""
+				let separator = json["styles"]["header"]["separator"].boolValue
+				var separatorColor = json["styles"]["header"]["separatorColor"].stringValue
+				if separatorColor == "" {
+					separatorColor = "transparent"
+				}
+				if separator {
+					boxSeparator = """
+					<div style="
+					max-width: 100%;
+					height: \(heightSeparator);
+					background-color: \(separatorColor);"></div>
+					"""
+				}
+				var color = json["styles"]["header"]["backgroundColor"].stringValue
+				if color == "" {
+					color = "transparent"
+				}
 				let header = checkFlexboxType(json: headerJSON)
+				let textStartComponent = """
+				\(boxSeparator)
+				<div style="
+					display: flex;
+					width: 100%;
+					max-width: 100%;
+					background-color: \(color);">
+				"""
+				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(header)
+				let textEndComponent = """
+				</div>
+				"""
+				htmlBodyString.append(textEndComponent)
 			}
 			htmlBodyString.append("<!-- End header-->")
 			
@@ -288,8 +347,39 @@ extension TestWebViewViewController {
 			htmlBodyString.append("<!-- hero -->")
 			let heroJSON = json["hero"]
 			if heroJSON != JSON.null {
+				var boxSeparator = ""
+				let separator = json["styles"]["hero"]["separator"].boolValue
+				var separatorColor = json["styles"]["hero"]["separatorColor"].stringValue
+				if separatorColor == "" {
+					separatorColor = "transparent"
+				}
+				if separator {
+					boxSeparator = """
+					<div style="
+					max-width: 100%;
+					height: \(heightSeparator);
+					background-color: \(separatorColor);"></div>
+					"""
+				}
+				var color = json["styles"]["header"]["backgroundColor"].stringValue
+				if color == "" {
+					color = "transparent"
+				}
 				let hero = checkFlexboxType(json: heroJSON)
+				let textStartComponent = """
+				\(boxSeparator)
+				<div style="
+					display: flex;
+					width: 100%;
+					max-width: 100%;
+					background-color: \(color);">
+				"""
+				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(hero)
+				let textEndComponent = """
+				</div>
+				"""
+				htmlBodyString.append(textEndComponent)
 			}
 			htmlBodyString.append("<!-- end hero -->")
 			
@@ -297,8 +387,39 @@ extension TestWebViewViewController {
 			htmlBodyString.append("<!-- body -->")
 			let bodyJSON = json["body"]
 			if bodyJSON != JSON.null {
+				var boxSeparator = ""
+				let separator = json["styles"]["body"]["separator"].boolValue
+				var separatorColor = json["styles"]["body"]["separatorColor"].stringValue
+				if separatorColor == "" {
+					separatorColor = "transparent"
+				}
+				if separator {
+					boxSeparator = """
+					<div style="
+					max-width: 100%;
+					height: \(heightSeparator);
+					background-color: \(separatorColor);"></div>
+					"""
+				}
+				var color = json["styles"]["body"]["backgroundColor"].stringValue
+				if color == "" {
+					color = "transparent"
+				}
 				let body = checkFlexboxType(json: bodyJSON)
+				let textStartComponent = """
+				\(boxSeparator)
+				<div style="
+					display: flex;
+					width: 100%;
+					max-width: 100%;
+					background-color: \(color);">
+				"""
+				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(body)
+				let textEndComponent = """
+				</div>
+				"""
+				htmlBodyString.append(textEndComponent)
 			}
 			htmlBodyString.append("<!-- End body -->")
 			
@@ -306,8 +427,39 @@ extension TestWebViewViewController {
 			htmlBodyString.append("<!-- footer -->")
 			let footerJSON = json["footer"]
 			if footerJSON != JSON.null {
+				var boxSeparator = ""
+				let separator = json["styles"]["footer"]["separator"].boolValue
+				var separatorColor = json["styles"]["footer"]["separatorColor"].stringValue
+				if separatorColor == "" {
+					separatorColor = "transparent"
+				}
+				if separator {
+					boxSeparator = """
+					<div style="
+					max-width: 100%;
+					height: \(heightSeparator);
+					background-color: \(separatorColor);"></div>
+					"""
+				}
+				var color = json["styles"]["footer"]["backgroundColor"].stringValue
+				if color == "" {
+					color = "transparent"
+				}
 				let footer = checkFlexboxType(json: footerJSON)
+				let textStartComponent = """
+				\(boxSeparator)
+				<div style="
+					display: flex;
+					width: 100%;
+					max-width: 100%;
+					background-color: \(color);">
+				"""
+				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(footer)
+				let textEndComponent = """
+				</div>
+				"""
+				htmlBodyString.append(textEndComponent)
 			}
 			htmlBodyString.append("<!-- End footer -->")
 			
@@ -363,28 +515,40 @@ extension TestWebViewViewController {
 		case "horizontal":
 			flexDirection = "row"
 			classText += " horizontal"
+		case "baseline":
+			flexDirection = "baseline"
+			classText += " baseline"
 		default:
 			break
 		}
+		
+		var positionValue = "relative"
+		let position = json["position"].stringValue
+		if position != "" {
+			positionValue = position
+		}
+		
 		var boxHTML = [String]()
 		var boxStartHTMLTag = """
             <div style="
                 display: flex;
                 flex-direction: \(flexDirection);
+                position: \(positionValue);
                 width: 100%;
                 max-width: 100%;
-                background-color: white;">
+                background-color: transparent;">
         """
 		if isInit {
 			boxStartHTMLTag = """
                 <div style="
                     display: flex;
                     flex-direction: \(flexDirection);
+                    position: \(positionValue);
                     width: 100%;
                     max-width: 100%;
                     padding-bottom: 20px;
                     padding: 20px;
-                    background-color: white;">
+                    background-color: transparent;">
         """
 		}
 		
@@ -432,7 +596,7 @@ extension TestWebViewViewController {
 	
 	func getImageHTML(json: JSON) -> String {
 		let url = json["url"].stringValue
-		var aspectRatio: String = ""
+		var aspectRatio: String = "100%"
 		if json["aspectRatio"].stringValue != "" {
 			let arr = json["aspectRatio"].stringValue.split(separator: ":")
 			aspectRatio = "\(( Double(arr[1])! / Double(arr[0])! ) * 100)%"
@@ -528,6 +692,9 @@ extension TestWebViewViewController {
 		var flex = "1"
 		if json["flex"].stringValue != "" {
 			flex = json["flex"].stringValue
+			if flex == "0" {
+				flex = "none"
+			}
 		}
 		
 		let margin = json["margin"].stringValue
@@ -589,6 +756,11 @@ extension TestWebViewViewController {
 		
 		let color = json["color"].stringValue
 		
+		var decoration = json["decoration"].stringValue
+		if decoration == "" {
+			decoration = "none"
+		}
+		
 		let textComponent = """
 		<div class="\(textClass)" style="
 			--text-type-size-value: \(getPxFromSize(size: size));
@@ -603,6 +775,7 @@ extension TestWebViewViewController {
 			width: auto;
 			white-space: \(whiteSpace);">
 			<p style="
+			text-decoration: \(decoration);
 			font-weight:\(weight);">\(text)</p>
 		</div>
 		"""
@@ -624,6 +797,26 @@ extension TestWebViewViewController {
 			positionValue = position
 		}
 		
+		var color: String = ""
+		switch json["style"].stringValue {
+		case "link":
+			color = "#42659a"
+			break
+		case "primary":
+			color = "#ffffff"
+			break
+		case "secondary":
+			color = "#111111"
+			break
+		default:
+			color = "#42659a"
+		}
+		
+		var colorBackground: String = json["color"].stringValue
+		if colorBackground == "" {
+			colorBackground = "transparent"
+		}
+		
 		let buttonComponent = """
 		<div class="" style="position: \(positionValue); flex-grow: 1;">
 				<a style="
@@ -637,7 +830,8 @@ extension TestWebViewViewController {
 					padding: 16px;
 					border-radius: 8px;
 					font-size: 16px;
-					color: #42659a">
+					color: \(color);
+					background-color: \(colorBackground)">
 						<div style="
 						white-space: nowrap;
 						text-overflow: ellipsis;
