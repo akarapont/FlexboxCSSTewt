@@ -14,51 +14,30 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 	@IBOutlet weak var wkWebView: WKWebView!
 	@IBOutlet weak var wkWebViewHeightConstraint: NSLayoutConstraint!
 	
-	var flexboxJSONData: JSON =  JSONStub().getJson6()
+	var flexboxJSONData: JSON =  JSONStub().getJson3()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let url = URL(string: "https://www.google.co.uk")!
-		
 		wkWebView.navigationDelegate = self
-		// wkWebView.load(URLRequest(url: url))
 		wkWebView.backgroundColor = UIColor.white
 		wkWebView.layer.cornerRadius = 12
 		wkWebView.clipsToBounds = true
-		//loadLocalHTML()
 		createHTML()
 	}
 	
-	func loadLocalHTML(){
-		let bundle = Bundle.main
-		var path = bundle.path(forResource: "flex_message", ofType: "html")
-		var html = ""
-		do {
-			try html = String(contentsOfFile: path!, encoding: .utf8)
-		} catch {
-			//ERROR
-		}
-		let urlstr = "http://website.com"
-		wkWebView.loadHTMLString(html, baseURL: URL(string: urlstr)!)
-	}
-	
 	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-		
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
 			webView.frame.size.height = 1
 			webView.frame.size = webView.sizeThatFits(.zero)
 			webView.scrollView.isScrollEnabled = false
 			self.wkWebViewHeightConstraint.constant = webView.scrollView.contentSize.height
-			
 			webView.sizeToFit()
 		}
-		
 	}
 	
 }
 
-
-//MARK: Flexbox
+//MARK: SetUp
 extension TestWebViewViewController {
 	
 	func createHTML(){
@@ -92,80 +71,76 @@ extension TestWebViewViewController {
 	func createHTMLBodyFromJSON(json: JSON) -> String {
 		var htmlBodyString = ""
 		let type = json["type"].stringValue
+		
+		// MainDiraction
+		var classDirectionValue: String = "FlexLTR"
 		var direction = json["direction"].stringValue
-		if direction == "" {
+		switch direction {
+		case "rtl":
+			direction = "rtl"
+			classDirectionValue = "FlexRTL"
+			break
+		case "ltr":
 			direction = "ltr"
+			classDirectionValue = "FlexLTR"
+			break
+		default:
+			direction = "ltr"
+			classDirectionValue = "FlexLTR"
+			break
 		}
 		
-		var classValue: String = ""
+		// Main Class Flex
+		var classFlexValue: String = ""
 		let size = json["size"].stringValue
 		switch size {
 		case "nano":
-			classValue = "FlexSizeNano"
+			classFlexValue = "FlexSizeNano"
 			break
 		case "micro":
-			classValue = "FlexSizeMicro"
+			classFlexValue = "FlexSizeMicro"
 			break
 		case "kilo":
-			classValue = "FlexSizeKilo"
+			classFlexValue = "FlexSizeKilo"
 			break
 		case "mega":
-			classValue = "FlexSizeMega"
+			classFlexValue = "FlexSizeMega"
 			break
 		case "giga":
-			classValue = "FlexSizeGiga"
+			classFlexValue = "FlexSizeGiga"
 			break
 		default:
-			classValue = "FlexSizeMega"
+			classFlexValue = "FlexSizeMega"
 			break
 		}
 		
 		if type == "bubble" {
+			// HTML Body
 			let bodyStartHTMLTag = """
                 <body>
-                    <!-- Bubble -->
-                    <div class="\(classValue)"
-                    style="display: flex;
-                    width: 100%;
-                    max-width: 100%;
-                    direction: \(direction);
-                    flex-direction: column;">
-            
+                    <div class="\(classFlexValue)" style="width: 100%;min-width: 0;">
+                    <div class="FlexContainer \(classDirectionValue)" dir="'\(direction)'">
             """
 			htmlBodyString.append(bodyStartHTMLTag)
 			
-			let heightSeparator = "1px"
-			
-			//header
-			htmlBodyString.append("<!-- header-->")
+			//Header
 			let headerJSON = json["header"]
 			if headerJSON != JSON.null {
-				var boxSeparator = ""
-				let separator = json["styles"]["header"]["separator"].boolValue
-				var separatorColor = json["styles"]["header"]["separatorColor"].stringValue
-				if separatorColor == "" {
-					separatorColor = "transparent"
+				
+				let sumClass: String = "BlockHeader "
+				var sumStyle: String = ""
+				
+				// backgroundColor
+				var styleBackgroundColor: String = "background-color:transparent !important;"
+				let backgroundColor = json["styles"]["header"]["backgroundColor"].stringValue
+				if backgroundColor != "" {
+					styleBackgroundColor = "background-color:\(backgroundColor) !important;"
+					sumStyle.append(styleBackgroundColor)
 				}
-				if separator {
-					boxSeparator = """
-					<div style="
-					max-width: 100%;
-					height: \(heightSeparator);
-					background-color: \(separatorColor);"></div>
-					"""
-				}
-				var color = json["styles"]["header"]["backgroundColor"].stringValue
-				if color == "" {
-					color = "transparent"
-				}
+				
 				let header = checkFlexboxType(json: headerJSON)
 				let textStartComponent = """
-				\(boxSeparator)
-				<div style="
-					display: flex;
-					width: 100%;
-					max-width: 100%;
-					background-color: \(color);">
+				<div class="\(sumClass)" style="\(sumStyle)">
 				"""
 				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(header)
@@ -174,38 +149,25 @@ extension TestWebViewViewController {
 				"""
 				htmlBodyString.append(textEndComponent)
 			}
-			htmlBodyString.append("<!-- End header-->")
 			
-			//hero
-			htmlBodyString.append("<!-- hero -->")
+			//Hero
 			let heroJSON = json["hero"]
 			if heroJSON != JSON.null {
-				var boxSeparator = ""
-				let separator = json["styles"]["hero"]["separator"].boolValue
-				var separatorColor = json["styles"]["hero"]["separatorColor"].stringValue
-				if separatorColor == "" {
-					separatorColor = "transparent"
+				
+				let sumClass: String = "BlockHero "
+				var sumStyle: String = ""
+				
+				// backgroundColor
+				var styleBackgroundColor: String = "background-color:transparent !important;"
+				let backgroundColor = json["styles"]["hero"]["backgroundColor"].stringValue
+				if backgroundColor != "" {
+					styleBackgroundColor = "background-color:\(backgroundColor) !important;"
+					sumStyle.append(styleBackgroundColor)
 				}
-				if separator {
-					boxSeparator = """
-					<div style="
-					max-width: 100%;
-					height: \(heightSeparator);
-					background-color: \(separatorColor);"></div>
-					"""
-				}
-				var color = json["styles"]["header"]["backgroundColor"].stringValue
-				if color == "" {
-					color = "transparent"
-				}
+				
 				let hero = checkFlexboxType(json: heroJSON)
 				let textStartComponent = """
-				\(boxSeparator)
-				<div style="
-					display: flex;
-					width: 100%;
-					max-width: 100%;flex-direction: column;
-					background-color: \(color);">
+				<div class="\(sumClass)" style="\(sumStyle)">
 				"""
 				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(hero)
@@ -214,38 +176,31 @@ extension TestWebViewViewController {
 				"""
 				htmlBodyString.append(textEndComponent)
 			}
-			htmlBodyString.append("<!-- end hero -->")
 			
-			//body
-			htmlBodyString.append("<!-- body -->")
+			//Body
 			let bodyJSON = json["body"]
 			if bodyJSON != JSON.null {
-				var boxSeparator = ""
-				let separator = json["styles"]["body"]["separator"].boolValue
-				var separatorColor = json["styles"]["body"]["separatorColor"].stringValue
-				if separatorColor == "" {
-					separatorColor = "transparent"
+				
+				var sumClass: String = "BlockBody "
+				var sumStyle: String = ""
+				
+				// backgroundColor
+				var styleBackgroundColor: String = "background-color:transparent !important;"
+				let backgroundColor = json["styles"]["body"]["backgroundColor"].stringValue
+				if backgroundColor != "" {
+					styleBackgroundColor = "background-color:\(backgroundColor) !important;"
+					sumStyle.append(styleBackgroundColor)
 				}
-				if separator {
-					boxSeparator = """
-					<div style="
-					max-width: 100%;
-					height: \(heightSeparator);
-					background-color: \(separatorColor);"></div>
-					"""
+				
+				// hasFooter
+				let footerJSON = json["footer"]
+				if footerJSON != JSON.null {
+					sumClass.append("HasFooter ")
 				}
-				var color = json["styles"]["body"]["backgroundColor"].stringValue
-				if color == "" {
-					color = "transparent"
-				}
+				
 				let body = checkFlexboxType(json: bodyJSON)
 				let textStartComponent = """
-				\(boxSeparator)
-				<div style="
-					display: flex;
-					width: 100%;
-					max-width: 100%;
-					background-color: \(color);">
+				<div class="\(sumClass)" style="\(sumStyle)">
 				"""
 				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(body)
@@ -254,38 +209,25 @@ extension TestWebViewViewController {
 				"""
 				htmlBodyString.append(textEndComponent)
 			}
-			htmlBodyString.append("<!-- End body -->")
 			
 			//footer
-			htmlBodyString.append("<!-- footer -->")
 			let footerJSON = json["footer"]
 			if footerJSON != JSON.null {
-				var boxSeparator = ""
-				let separator = json["styles"]["footer"]["separator"].boolValue
-				var separatorColor = json["styles"]["footer"]["separatorColor"].stringValue
-				if separatorColor == "" {
-					separatorColor = "transparent"
+				
+				let sumClass: String = "BlockFooter "
+				var sumStyle: String = ""
+				
+				// backgroundColor
+				var styleBackgroundColor: String = "background-color:transparent !important;"
+				let backgroundColor = json["styles"]["body"]["backgroundColor"].stringValue
+				if backgroundColor != "" {
+					styleBackgroundColor = "background-color:\(backgroundColor) !important;"
+					sumStyle.append(styleBackgroundColor)
 				}
-				if separator {
-					boxSeparator = """
-					<div style="
-					max-width: 100%;
-					height: \(heightSeparator);
-					background-color: \(separatorColor);"></div>
-					"""
-				}
-				var color = json["styles"]["footer"]["backgroundColor"].stringValue
-				if color == "" {
-					color = "transparent"
-				}
+				
 				let footer = checkFlexboxType(json: footerJSON)
 				let textStartComponent = """
-				\(boxSeparator)
-				<div style="
-					display: flex;
-					width: 100%;
-					max-width: 100%;
-					background-color: \(color);">
+				<div class="\(sumClass)" style="\(sumStyle)">
 				"""
 				htmlBodyString.append(textStartComponent)
 				htmlBodyString.append(footer)
@@ -294,17 +236,21 @@ extension TestWebViewViewController {
 				"""
 				htmlBodyString.append(textEndComponent)
 			}
-			htmlBodyString.append("<!-- End footer -->")
 			
 			let bodyEndHTMLTag = """
+                    </div>
                     </div>
                 </body>
             """
 			htmlBodyString.append(bodyEndHTMLTag)
+			// HTML End Body
 		}
-		print("Check html: \(htmlBodyString)")
 		return htmlBodyString
 	}
+}
+
+//MARK: init FlexBox
+extension TestWebViewViewController {
 	
 	func checkFlexboxType(json: JSON, isInit: Bool = true) -> String {
 		var contentString = ""
@@ -341,85 +287,169 @@ extension TestWebViewViewController {
 	}
 	
 	func createFlexboxInitBoxType(json: JSON, isInit: Bool = true) -> [String] {
-		let layoutType = json["layout"].stringValue
-		var classText = "BoxType"
-		var margin: String = ""
-		var flexDirection = ""
-		switch layoutType {
-		case "vertical":
-			flexDirection = "column"
-			classText += " vertical"
-			margin = "margin-top: "
-		case "horizontal":
-			flexDirection = "row"
-			classText += " horizontal"
-			margin = "margin-left: "
-		case "baseline":
-			flexDirection = "baseline"
-			classText += " baseline"
-			margin = "margin-left: "
-		default:
-			break
+		
+		var sumStyle: String = ""
+		
+		// layout
+		let classLayoutType = json["layout"].stringValue
+		
+		// flex
+		var styleFlexType = ""
+		let classFlexType = json["flex"].stringValue
+		if classFlexType != "" {
+			if classFlexType == "0" {
+				styleFlexType = "flex: none!important;-webkit-box-flex: \(classFlexType)!important;"
+				sumStyle.append(styleFlexType)
+			} else {
+				styleFlexType = "flex: \(classFlexType)!important;-webkit-box-flex: \(classFlexType)!important;"
+				sumStyle.append(styleFlexType)
+			}
 		}
 		
-		var positionValue = "relative"
+		// spacing
+		var classSpacingType = ""
+		var styleSpacingType = ""
+		let spacingType = json["spacing"].stringValue
+		if spacingType != "" {
+			classSpacingType = "BoxTypeSpacing"
+			styleSpacingType = "--box-type-spacing-value:\(getSizeSpacing(size: spacingType));"
+			sumStyle.append(styleSpacingType)
+		}
+
+		// margin
+		var classMarginType = ""
+		var styleMarginType = ""
+		let marginType = json["margin"].stringValue
+		if marginType != "" {
+			classMarginType = "BoxTypeMargin"
+			styleMarginType = "--box-type-margin-value:\(getSizeSpacing(size: marginType));"
+			sumStyle.append(styleMarginType)
+		}
+		
+		// position
+		var classPositionType = ""
 		let position = json["position"].stringValue
-		if position != "" {
-			positionValue = position
+		if position == "absolute" {
+			classPositionType = "PositionRelative"
 		}
 		
-		var marginValue = "0px"
-		switch json["margin"].stringValue {
-		case "xs":
-			marginValue = "2px"
-			break
-		case "sm":
-			marginValue = "4px"
-			break
-		case "md":
-			marginValue = "8px"
-			break
-		case "lg":
-			marginValue = "12px"
-			break
-		case "xl":
-			marginValue = "16px"
-			break
-		case "xxl":
-			marginValue = "20px"
-			break
-		default:
-			marginValue = "0px"
+		// offset
+		var styleOffsetTop = ""
+		let offsetTop = json["offsetTop"].stringValue
+		if offsetTop != "" {
+			styleOffsetTop = "top: \(offsetTop);"
+			sumStyle.append(styleOffsetTop)
 		}
 		
-		var componentMargin:String = ""
-		if margin != "" && marginValue != "" {
-			componentMargin = "\(margin) \(marginValue);"
+		var styleOffsetBottom = ""
+		let offsetBottom = json["offsetBottom"].stringValue
+		if offsetBottom != "" {
+			styleOffsetBottom = "bottom: \(offsetBottom);"
+			sumStyle.append(styleOffsetBottom)
+		}
+		
+		var styleOffsetStart = ""
+		let offsetStart = json["offsetStart"].stringValue
+		if offsetStart != "" {
+			styleOffsetStart = "left: \(offsetStart);"
+			sumStyle.append(styleOffsetStart)
+		}
+		
+		var styleOffsetEnd = ""
+		let offsetEnd = json["offsetEnd"].stringValue
+		if offsetEnd != "" {
+			styleOffsetEnd = "right: \(offsetEnd);"
+			sumStyle.append(styleOffsetEnd)
+		}
+		
+		// padding
+		var stylePaddingAll = ""
+		let paddingAll = json["paddingAll"].stringValue
+		if paddingAll != "" {
+			stylePaddingAll = "padding: \(paddingAll);"
+			sumStyle.append(stylePaddingAll)
+		}
+		
+		var stylePaddingTop = ""
+		let paddingTop = json["paddingTop"].stringValue
+		if paddingTop != "" {
+			stylePaddingTop = "padding-top: \(paddingTop);"
+			sumStyle.append(stylePaddingTop)
+		}
+		
+		var stylePaddingBottom = ""
+		let paddingBottom = json["paddingBottom"].stringValue
+		if paddingBottom != "" {
+			stylePaddingBottom = "padding-bottom: \(paddingBottom);"
+			sumStyle.append(stylePaddingBottom)
+		}
+		
+		var stylePaddingStart = ""
+		let paddingStart = json["paddingStart"].stringValue
+		if paddingStart != "" {
+			stylePaddingStart = "padding-left: \(paddingStart);"
+			sumStyle.append(stylePaddingStart)
+		}
+		
+		var stylePaddingEnd = ""
+		let paddingEnd = json["paddingEnd"].stringValue
+		if paddingEnd != "" {
+			stylePaddingEnd = "padding-right: \(paddingEnd);"
+			sumStyle.append(stylePaddingEnd)
+		}
+		
+		// width
+		var styleWidth = ""
+		let width = json["width"].stringValue
+		if width != "" {
+			styleWidth = "width: \(width);"
+			sumStyle.append(styleWidth)
+		}
+		
+		// height
+		var styleHeight = ""
+		let height = json["height"].stringValue
+		if height != "" {
+			styleHeight = "height: \(height);"
+			sumStyle.append(styleHeight)
+		}
+		
+		// borderWidth
+		var styleBorderWidth: String = ""
+		let borderWidth = json["borderWidth"].stringValue
+		if borderWidth != "" {
+			styleBorderWidth = "border-width: \(borderWidth);"
+			sumStyle.append(styleBorderWidth)
+		}
+		
+		// backgroundColor
+		var styleBackgroundColor: String = ""
+		let backgroundColor = json["backgroundColor"].stringValue
+		if backgroundColor != "" {
+			styleBackgroundColor = "background-color: \(backgroundColor);"
+			sumStyle.append(styleBackgroundColor)
+		}
+		
+		// borderColor
+		var styleBorderColor: String = ""
+		let borderColor = json["borderColor"].stringValue
+		if borderColor != "" {
+			styleBorderColor = "border-color: \(borderColor);"
+			sumStyle.append(styleBorderColor)
+		}
+		
+		// cornerRadius
+		var styleCornerRadius: String = ""
+		let cornerRadius = json["cornerRadius"].stringValue
+		if cornerRadius != "" {
+			styleCornerRadius = "border-radius: \(cornerRadius);"
+			sumStyle.append(styleCornerRadius)
 		}
 		
 		var boxHTML = [String]()
 		var boxStartHTMLTag = """
-            <div style="
-                display: flex;
-                flex-direction: \(flexDirection);
-                position: \(positionValue);
-                width: 100%;
-                max-width: 100%;
-                background-color: transparent;">
+            <div class="BoxType \(classLayoutType) \(classPositionType) \(classSpacingType) \(classMarginType)" style="\(sumStyle)">
         """
-		if isInit {
-			boxStartHTMLTag = """
-                <div style="
-                    display: flex;
-                    flex-direction: \(flexDirection);
-                    position: \(positionValue);
-                    width: 100%;
-                    max-width: 100%;
-                    padding-bottom: 20px;
-                    padding: 20px;
-                    background-color: transparent;">
-        """
-		}
 		
 		let jsonContents = json["contents"]
 		if jsonContents.count > 0 {
@@ -464,6 +494,7 @@ extension TestWebViewViewController {
 	
 }
 
+//MARK: init Item
 extension TestWebViewViewController {
 	
 	func getImageHTML(json: JSON) -> String {
@@ -750,12 +781,44 @@ extension TestWebViewViewController {
 	}
 	
 	func getButtonHTML(json: JSON) -> String {
-		let actionLabel = json["action"]["label"].stringValue
-		let height = json["height"].stringValue
 		
-		var size = "52px"
-		if height == "sm" {
-			size = "40px"
+		var sumClass: String = "ButtonType "
+		var sumStyle: String = ""
+		
+		// value
+		let actionLabel = json["action"]["label"].stringValue
+		
+		// flex
+		var styleFlexType = ""
+		let classFlexType = json["flex"].stringValue
+		if classFlexType != "" {
+			if classFlexType == "0" {
+				styleFlexType = "flex: none!important;-webkit-box-flex: \(classFlexType)!important;"
+				sumStyle.append(styleFlexType)
+			} else {
+				styleFlexType = "flex: \(classFlexType)!important;-webkit-box-flex: \(classFlexType)!important;"
+				sumStyle.append(styleFlexType)
+			}
+		}
+		
+		// margin
+		var classMarginType = ""
+		var styleMarginType = ""
+		let marginType = json["margin"].stringValue
+		if marginType != "" {
+			classMarginType = "BoxTypeMargin"
+			styleMarginType = "--box-type-margin-value:\(getSizeSpacing(size: marginType));"
+			sumStyle.append(styleMarginType)
+		}
+		
+		// height
+		let height = json["height"].stringValue
+		if height != "" {
+			if height == "sm" {
+				sumClass.append("HeightSm ")
+			} else {
+				sumClass.append("HeightMd ")
+			}
 		}
 		
 		var positionValue = "relative"
@@ -792,27 +855,8 @@ extension TestWebViewViewController {
 		let radius = "8px"
 		
 		let buttonComponent = """
-		<div class="" style="position: \(positionValue); flex-grow: 1;">
-				<a style="
-					display: inherit;
-					-webkit-box-align: center;
-					align-items: center;
-					-webkit-box-pack: center;
-					justify-content: center;
-					width: 100%;
-					height: \(size);
-					padding: 16px;
-					border-radius: \(radius);
-					font-size: 16px;
-					color: \(color);
-					background-color: \(colorBackground)">
-						<div style="
-						white-space: nowrap;
-						text-overflow: ellipsis;
-						overflow: hidden;
-						text-align: center;
-						max-width: 100%;">\(actionLabel)</div>
-				</a>
+		<div class="\(sumClass)" style="">
+				<a style=""><div>\(actionLabel)</div></a>
 		</div>
 		"""
 		return buttonComponent
@@ -850,8 +894,6 @@ extension TestWebViewViewController {
 	}
 }
 
-
-
 extension String {
 	var htmlToAttributedString: NSAttributedString? {
 		guard let data = data(using: .utf8) else { return nil }
@@ -867,7 +909,137 @@ extension String {
 }
 
 extension TestWebViewViewController {
+	
 	func getPxFromSize(size: String) -> String{
+		switch size {
+		case "xxs":
+			return "11px"
+		case "xs":
+			return "13px"
+		case "sm":
+			return "14px"
+		case "md":
+			return "16px"
+		case "lg":
+			return "19px"
+		case "xl":
+			return "22px"
+		case "xxl":
+			return "29px"
+		case "3xl":
+			return "35px"
+		case "4xl":
+			return "48px"
+		case "5xl":
+			return "74px"
+		default:
+			return "22px"
+		}
+	}
+	
+	func getSizeMargin(size: String) -> String {
+		var marginValue: String = ""
+		switch size {
+		case "xs":
+			marginValue = "2px"
+			break
+		case "sm":
+			marginValue = "4px"
+			break
+		case "md":
+			marginValue = "8px"
+			break
+		case "lg":
+			marginValue = "12px"
+			break
+		case "xl":
+			marginValue = "16px"
+			break
+		case "xxl":
+			marginValue = "20px"
+			break
+		default:
+			marginValue = "0px"
+			break
+		}
+		return marginValue
+	}
+	
+	func getSizeSpacing(size: String) -> String {
+		var marginValue: String = ""
+		switch size {
+		case "xs":
+			marginValue = "2px"
+			break
+		case "sm":
+			marginValue = "4px"
+			break
+		case "md":
+			marginValue = "8px"
+			break
+		case "lg":
+			marginValue = "12px"
+			break
+		case "xl":
+			marginValue = "16px"
+			break
+		case "xxl":
+			marginValue = "20px"
+			break
+		default:
+			marginValue = "0px"
+			break
+		}
+		return marginValue
+	}
+	
+	func getSizeImage(size: String) -> String {
+		var sizeValue: String = "140px"
+		switch size {
+		case "full":
+			sizeValue = "100%"
+			break
+		case "5xl":
+			sizeValue = "240px"
+			break
+		case "4xl":
+			sizeValue = "220px"
+			break
+		case "3xl":
+			sizeValue = "200px"
+			break
+		case "2xl":
+			sizeValue = "180px"
+			break
+		case "xxl":
+			sizeValue = "160px"
+			break
+		case "xl":
+			sizeValue = "140px"
+			break
+		case "lg":
+			sizeValue = "120px"
+			break
+		case "md":
+			sizeValue = "90px"
+			break
+		case "sm":
+			sizeValue = "80px"
+			break
+		case "xs":
+			sizeValue = "60px"
+			break
+		case "xxs":
+			sizeValue = "40px"
+			break
+		default:
+			sizeValue = "140px"
+			break
+		}
+		return sizeValue
+	}
+	
+	func getSizeText(size: String) -> String{
 		switch size {
 		case "xxs":
 			return "11px"
