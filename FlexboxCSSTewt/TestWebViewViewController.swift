@@ -14,7 +14,7 @@ class TestWebViewViewController: UIViewController, WKNavigationDelegate {
 	@IBOutlet weak var wkWebView: WKWebView!
 	@IBOutlet weak var wkWebViewHeightConstraint: NSLayoutConstraint!
 	
-	var flexboxJSONData: JSON =  JSONStub().getJson3()
+	var flexboxJSONData: JSON =  JSONStub().getJson1()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -675,19 +675,15 @@ extension TestWebViewViewController {
 		
 		// Size
 		let size = json["size"].stringValue
-		if size != "" {
-			sumStyle.append("--icon-type-size-value:\(getSizeText(size: size));")
-			sumClass.append("IconTypeSize ")
-		}
+		sumStyle.append("--icon-type-size-value:\(getSizeText(size: size));")
+		sumClass.append("IconTypeSize ")
 		
-//		// AspectRatio
-//		var aspectRatio: String = "100%"
-//		if json["aspectRatio"].stringValue != "" {
-//			let arr = json["aspectRatio"].stringValue.split(separator: ":")
-//			aspectRatio = "\(( Double(arr[1])! / Double(arr[0])! ) * 100)%"
-//			sumStyle.append("padding-bottom:\(aspectRatio);")
-//		}
-		//เอาไปเป็น width
+		// AspectRatio
+		var aspectRatio: String = "1em"
+		if json["aspectRatio"].stringValue != "" {
+			let arr = json["aspectRatio"].stringValue.split(separator: ":")
+			aspectRatio = "\(( Double(arr[1])! / Double(arr[0])! ) )em"
+		}
 		
 		// position
 		let position = json["position"].stringValue
@@ -725,7 +721,7 @@ extension TestWebViewViewController {
 		}
 		
 		let iconConponent = """
-		<div class="\(sumClass)" style="\(sumStyle)width: 1em;">
+		<div class="\(sumClass)" style="\(sumStyle)width: \(aspectRatio);">
 				<div><span style="background-image:url('\(url)');"></span></div>
 		</div>
 		"""
@@ -756,10 +752,8 @@ extension TestWebViewViewController {
 		
 		// Size
 		let size = json["size"].stringValue
-		if size != "" {
-			sumClass.append("TextTypeSize ")
-			sumStyle.append("--text-type-size-value:\(getSizeText(size: size));")
-		}
+		sumClass.append("TextTypeSize ")
+		sumStyle.append("--text-type-size-value:\(getSizeText(size: size));")
 		
 		// Color
 		let color = json["color"].stringValue
@@ -1032,13 +1026,11 @@ extension TestWebViewViewController {
 		
 		// size
 		let size = json["size"].stringValue
-		if size != "" {
-			sumClass.append("SpacerTypeSize ")
-			sumStyle.append("--spacer-size-value:\(getSizeSpacing(size: size));")
-		}
+		sumClass.append("SpacerTypeSize ")
+		sumStyle.append("--spacer-size-value:\(getSizeSpacing(size: size));")
 		
 		let spacerComponent = """
-			div class="\(sumClass)" style="\(sumStyle)"></div>
+			<div class="\(sumClass)" style="\(sumStyle)"></div>
 		"""
 		return spacerComponent
 	}
@@ -1059,33 +1051,6 @@ extension String {
 }
 
 extension TestWebViewViewController {
-	
-	func getPxFromSize(size: String) -> String{
-		switch size {
-		case "xxs":
-			return "11px"
-		case "xs":
-			return "13px"
-		case "sm":
-			return "14px"
-		case "md":
-			return "16px"
-		case "lg":
-			return "19px"
-		case "xl":
-			return "22px"
-		case "xxl":
-			return "29px"
-		case "3xl":
-			return "35px"
-		case "4xl":
-			return "48px"
-		case "5xl":
-			return "74px"
-		default:
-			return "22px"
-		}
-	}
 	
 	func getSizeMargin(size: String) -> String {
 		var marginValue: String = ""
@@ -1212,15 +1177,7 @@ extension TestWebViewViewController {
 		case "5xl":
 			return "74px"
 		default:
-			return "22px"
+			return "16px"
 		}
 	}
 }
-
-
-/*
-	margin
-		vertical = top
-		horizontal = left
-
-*/
