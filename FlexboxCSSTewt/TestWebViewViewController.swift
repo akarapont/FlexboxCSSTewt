@@ -280,6 +280,12 @@ extension TestWebViewViewController {
 		case "separator":
 			contentString.append(getSeparatorHTML(json: json))
 			break
+		case "filler":
+			contentString.append(getFillerHTML(json: json))
+			break
+		case "spacer":
+			contentString.append(getSpacerHTML(json: json))
+			break
 		default:
 			break
 		}
@@ -291,7 +297,21 @@ extension TestWebViewViewController {
 		var sumStyle: String = ""
 		
 		// layout
-		let classLayoutType = json["layout"].stringValue
+		var classLayoutType = "vertical"
+		switch json["layout"].stringValue {
+		case "vertical":
+			classLayoutType = "vertical"
+			break
+		case "horizontal":
+			classLayoutType = "horizontal"
+			break
+		case "baseline":
+			classLayoutType = "horizontal baseline"
+			break
+		default:
+			classLayoutType = "vertical"
+			break
+		}
 		
 		// flex
 		var styleFlexType = ""
@@ -322,7 +342,7 @@ extension TestWebViewViewController {
 		let marginType = json["margin"].stringValue
 		if marginType != "" {
 			classMarginType = "BoxTypeMargin"
-			styleMarginType = "--box-type-margin-value:\(getSizeSpacing(size: marginType));"
+			styleMarginType = "--box-type-margin-value:\(getSizeMargin(size: marginType));"
 			sumStyle.append(styleMarginType)
 		}
 		
@@ -330,7 +350,7 @@ extension TestWebViewViewController {
 		var classPositionType = ""
 		let position = json["position"].stringValue
 		if position == "absolute" {
-			classPositionType = "PositionRelative"
+			classPositionType = "PositionAbsolute"
 		}
 		
 		// offset
@@ -446,6 +466,18 @@ extension TestWebViewViewController {
 			sumStyle.append(styleCornerRadius)
 		}
 		
+		// background
+		let background = json["background"]
+		if background != JSON.null {
+			let type = background["type"].stringValue
+			let angle = background["angle"].stringValue
+			let endColor = background["endColor"].stringValue
+			let startColor = background["startColor"].stringValue
+			if type == "linearGradient" {
+				sumStyle.append("background: linear-gradient(\(angle),\(startColor) 0%,\(endColor) 100%);")
+			}
+		}
+		
 		var boxHTML = [String]()
 		var boxStartHTMLTag = """
             <div class="BoxType \(classLayoutType) \(classPositionType) \(classSpacingType) \(classMarginType)" style="\(sumStyle)">
@@ -484,6 +516,12 @@ extension TestWebViewViewController {
 			case "separator":
 				contentHTML.append(getSeparatorHTML(json: json[i]))
 				break
+			case "filler":
+				contentHTML.append(getFillerHTML(json: json[i]))
+				break
+			case "spacer":
+				contentHTML.append(getSpacerHTML(json: json[i]))
+				break
 			default:
 				break
 			}
@@ -498,127 +536,122 @@ extension TestWebViewViewController {
 extension TestWebViewViewController {
 	
 	func getImageHTML(json: JSON) -> String {
+		
+		var sumClass: String = "ImageType "
+		var sizeImage: String = ""
+		var sumStyle: String = ""
+		
+		// URL Image
 		let url = json["url"].stringValue
+		
+		// Flex
+		
+		// Size
+		let size = json["size"].stringValue
+		sizeImage = "width:\(getSizeImage(size: size));"
+		if size == "full" {
+			sumClass.append("ImageTypeSizeFull ")
+		}
+		
+		// Align
+		switch json["align"].stringValue {
+		case "start":
+			sumClass.append("alignStart ")
+			break
+		case "center":
+			sumClass.append("alignCenter ")
+			break
+		case "end":
+			sumClass.append("alignEnd ")
+			break
+		default:
+			break
+		}
+		
+		// gravity
+		let gravity = json["gravity"].stringValue
+		switch gravity {
+		case "top":
+			sumClass.append("gravityTop ")
+			break
+		case "center":
+			sumClass.append("gravityCenter ")
+			break
+		case "bottom":
+			sumClass.append("gravityBottom ")
+			break
+		default:
+			break
+		}
+		
+		// AspectRatio
 		var aspectRatio: String = "100%"
 		if json["aspectRatio"].stringValue != "" {
 			let arr = json["aspectRatio"].stringValue.split(separator: ":")
 			aspectRatio = "\(( Double(arr[1])! / Double(arr[0])! ) * 100)%"
 		}
 		
-		var backgroundSize = "cover"
-		if json["aspectMode"].stringValue != "" {
-			if json["aspectMode"].stringValue == "fit" {
-				backgroundSize = "contain"
-			}
+		// AspectMode
+		let aspectMode = json["aspectMode"].stringValue
+		if aspectMode == "fit" {
+			sumClass.append("AspectModeFit ")
+		} else {
+			sumClass.append("AspectModeCover ")
 		}
 		
-		var positionValue = "relative"
+		// margin
+		var classMarginType = ""
+		var styleMarginType = ""
+		let marginType = json["margin"].stringValue
+		if marginType != "" {
+			classMarginType = "ImageTypeMargin "
+			styleMarginType = "--image-type-margin-value:\(getSizeMargin(size: marginType));"
+			sumStyle.append(styleMarginType)
+			sumClass.append(classMarginType)
+		}
+		
+		// position
 		let position = json["position"].stringValue
-		if position != "" {
-			positionValue = position
+		if position == "absolute" {
+			sumClass.append("PositionAbsolute ")
 		}
 		
-		var align = "center"
-		switch json["align"].stringValue {
-		case "start":
-			align = "flex-start"
-			break
-		case "center":
-			align = "center"
-			break
-		case "end":
-			align = "flex-end"
-			break
-		default:
-			align = "center"
-			break
+		// offset
+		var styleOffsetTop = ""
+		let offsetTop = json["offsetTop"].stringValue
+		if offsetTop != "" {
+			styleOffsetTop = "top: \(offsetTop);"
+			sumStyle.append(styleOffsetTop)
 		}
 		
-		var size = "140px"
-		switch json["size"].stringValue {
-		case "full":
-			size = "100%"
-			break
-		case "5xl":
-			size = "240px"
-			break
-		case "4xl":
-			size = "220px"
-			break
-		case "3xl":
-			size = "200px"
-			break
-		case "2xl":
-			size = "180px"
-			break
-		case "xxl":
-			size = "160px"
-			break
-		case "xl":
-			size = "140px"
-			break
-		case "lg":
-			size = "120px"
-			break
-		case "md":
-			size = "90px"
-			break
-		case "sm":
-			size = "80px"
-			break
-		case "xs":
-			size = "60px"
-			break
-		case "xxs":
-			size = "40px"
-			break
-		default:
-			size = "140px"
-			break
+		var styleOffsetBottom = ""
+		let offsetBottom = json["offsetBottom"].stringValue
+		if offsetBottom != "" {
+			styleOffsetBottom = "bottom: \(offsetBottom);"
+			sumStyle.append(styleOffsetBottom)
 		}
 		
-		let imageComponent = """
-		<div style="
-			 display: block;
-			 position: \(positionValue);
-			 width: 100%;
-			 max-width: 100%;
-			 background-image: url('\(url)');
-			 padding-bottom: \(aspectRatio);
-			 background-size: \(backgroundSize);
-			 background-repeat: no-repeat;
-			 background-position: center center;"></div>
-		"""
+		var styleOffsetStart = ""
+		let offsetStart = json["offsetStart"].stringValue
+		if offsetStart != "" {
+			styleOffsetStart = "left: \(offsetStart);"
+			sumStyle.append(styleOffsetStart)
+		}
+		
+		var styleOffsetEnd = ""
+		let offsetEnd = json["offsetEnd"].stringValue
+		if offsetEnd != "" {
+			styleOffsetEnd = "right: \(offsetEnd);"
+			sumStyle.append(styleOffsetEnd)
+		}
 		
 		let newimageComponent = """
-		<div style="
-		display: flex;
-		position: \(positionValue);
-		justify-content: \(align);
-		width:100%
-		overflow: hidden;
-		background-color: transparent;">
-			<div style="
-			width: \(size);
-			max-width: 100%">
-				<a style="padding-bottom:\(aspectRatio);
-					display: block;
-					position: relative;
-					width: 100%">
-						<span style=" background-size: \(backgroundSize);
-							display: block;
-							position: absolute;
-							left: 0;
-							right: 0;
-							top: 0;
-							bottom: 0;
-							overflow: hidden;
-							background-repeat: no-repeat;
-							background-position: center center;
-							background-image:url('\(url)');">
-						</span>
-				</a>
-			</div>
+		<div class="\(sumClass)" style="\(sumStyle)">
+				<div style="\(sizeImage)">
+						<a style="padding-bottom:\(aspectRatio);">
+								<span style="background-image:url('\(url)');"></span>
+						</a>
+				</div>
 		</div>
 		"""
 		
@@ -626,169 +659,89 @@ extension TestWebViewViewController {
 	}
 	
 	func getIconHTML(json: JSON) -> String {
-		let url = json["url"].stringValue
-		var classText = ""
 		
+		var sumClass: String = "IconType "
+		var sumStyle: String = ""
+		
+		// URL
+		let url = json["url"].stringValue
+		
+		// margin
+		let marginType = json["margin"].stringValue
+		if marginType != "" {
+			sumStyle.append("--icon-type-margin-value:\(getSizeMargin(size: marginType));")
+			sumClass.append("IconTypeMargin ")
+		}
+		
+		// Size
 		let size = json["size"].stringValue
 		if size != "" {
-			classText += " IconTypeSize"
+			sumStyle.append("--icon-type-size-value:\(getSizeText(size: size));")
+			sumClass.append("IconTypeSize ")
 		}
 		
-		var offsetTopValue = "0px"
-		if json["offsetTop"].stringValue != "" {
-			offsetTopValue = json["offsetTop"].stringValue
-		}
+//		// AspectRatio
+//		var aspectRatio: String = "100%"
+//		if json["aspectRatio"].stringValue != "" {
+//			let arr = json["aspectRatio"].stringValue.split(separator: ":")
+//			aspectRatio = "\(( Double(arr[1])! / Double(arr[0])! ) * 100)%"
+//			sumStyle.append("padding-bottom:\(aspectRatio);")
+//		}
+		//เอาไปเป็น width
 		
-		var offsetBottomValue = "0px"
-		if json["offsetBottom"].stringValue != "" {
-			offsetBottomValue = json["offsetBottom"].stringValue
-		}
-		
-		var offsetLeftValue = "0px"
-		if json["offsetStart"].stringValue != "" {
-			offsetLeftValue = json["offsetStart"].stringValue
-		}
-		
-		var offsetRightValue = "0px"
-		if json["offsetEnd"].stringValue != "" {
-			offsetRightValue = json["offsetEnd"].stringValue
-		}
-		
-		var positionValue = "relative"
+		// position
 		let position = json["position"].stringValue
-		if position != "" {
-			positionValue = position
+		if position == "absolute" {
+			sumClass.append("PositionAbsolute ")
+		}
+		
+		// offset
+		var styleOffsetTop = ""
+		let offsetTop = json["offsetTop"].stringValue
+		if offsetTop != "" {
+			styleOffsetTop = "top: \(offsetTop);"
+			sumStyle.append(styleOffsetTop)
+		}
+		
+		var styleOffsetBottom = ""
+		let offsetBottom = json["offsetBottom"].stringValue
+		if offsetBottom != "" {
+			styleOffsetBottom = "bottom: \(offsetBottom);"
+			sumStyle.append(styleOffsetBottom)
+		}
+		
+		var styleOffsetStart = ""
+		let offsetStart = json["offsetStart"].stringValue
+		if offsetStart != "" {
+			styleOffsetStart = "left: \(offsetStart);"
+			sumStyle.append(styleOffsetStart)
+		}
+		
+		var styleOffsetEnd = ""
+		let offsetEnd = json["offsetEnd"].stringValue
+		if offsetEnd != "" {
+			styleOffsetEnd = "right: \(offsetEnd);"
+			sumStyle.append(styleOffsetEnd)
 		}
 		
 		let iconConponent = """
-		<div class="\(classText)" style="
-			 font-size:\(getPxFromSize(size: size));
-			 display: inline-block;
-			 margin-top: \(offsetTopValue);
-			 margin-bottom: \(offsetBottomValue);
-			 margin-left: \(offsetLeftValue);
-			 margin-right: \(offsetRightValue);
-			 position: \(positionValue);
-			 overflow: hidden;
-			 vertical-align: baseline;
-			 background-image: url('\(url)');
-			 width: 1em;
-			 height: 1em;
-			 background-repeat: no-repeat center;
-			 background-size: contain;"></div>
+		<div class="\(sumClass)" style="\(sumStyle)width: 1em;">
+				<div><span style="background-image:url('\(url)');"></span></div>
+		</div>
 		"""
 		return iconConponent
 	}
 	
 	func getTextHTML(json: JSON) -> String {
+		
+		var sumClass: String = "TextType "
+		var sumStyle: String = ""
+		var sumPStyle: String = ""
+		
+		// Text
 		let text = json["text"].stringValue
 		
-		var textClass = "TextType "
-		var flex = "1"
-		if json["flex"].stringValue != "" {
-			flex = json["flex"].stringValue
-			if flex == "0" {
-				flex = "none"
-			}
-		}
-		
-		let margin = json["margin"].stringValue
-		
-		let align = json["align"].stringValue
-		switch align {
-		case "start":
-			textClass += " TextAlignStart"
-			break
-		case "center":
-			textClass += " TextAlignCenter"
-			break
-		case "end":
-			textClass += " TextAlignEnd"
-			break
-		default:
-			break
-		}
-		
-		var whiteSpace = "nowrap"
-		let wrap = json["wrap"].boolValue
-		if wrap  {
-			whiteSpace = "normal"
-			textClass += " TextTypeWrap"
-		}
-		
-		var positionValue = "relative"
-		let position = json["position"].stringValue
-		if position != "" {
-			positionValue = position
-		}
-		
-		var offsetTopValue = "0px"
-		if json["offsetTop"].stringValue != "" {
-			offsetTopValue = json["offsetTop"].stringValue
-		}
-		
-		var offsetBottomValue = "0px"
-		if json["offsetBottom"].stringValue != "" {
-			offsetBottomValue = json["offsetBottom"].stringValue
-		}
-		
-		var offsetLeftValue = "0px"
-		if json["offsetStart"].stringValue != "" {
-			offsetLeftValue = json["offsetStart"].stringValue
-		}
-		
-		var offsetRightValue = "0px"
-		if json["offsetEnd"].stringValue != "" {
-			offsetRightValue = json["offsetEnd"].stringValue
-		}
-		
-		let size = json["size"].stringValue
-		if size != "" {
-			textClass += " TextTypeSize"
-		}
-		
-		var weight = json["weight"].stringValue
-		if weight == "" {
-			weight = "regular"
-		}
-		
-		let color = json["color"].stringValue
-		
-		var decoration = json["decoration"].stringValue
-		if decoration == "" {
-			decoration = "none"
-		}
-		
-		let textComponent = """
-		<div class="\(textClass)" style="
-			--text-type-size-value: \(getPxFromSize(size: size));
-			display: flex;
-			flex: \(flex);
-			margin-top: \(offsetTopValue);
-			margin-bottom: \(offsetBottomValue);
-			margin-left: \(offsetLeftValue);
-			margin-right: \(offsetRightValue);
-			position: \(positionValue);
-			color: \(color);
-			width: auto;
-			white-space: \(whiteSpace);">
-			<p style="
-			text-decoration: \(decoration);
-			font-weight:\(weight);">\(text)</p>
-		</div>
-		"""
-		return textComponent
-	}
-	
-	func getButtonHTML(json: JSON) -> String {
-		
-		var sumClass: String = "ButtonType "
-		var sumStyle: String = ""
-		
-		// value
-		let actionLabel = json["action"]["label"].stringValue
-		
-		// flex
+		// Flex
 		var styleFlexType = ""
 		let classFlexType = json["flex"].stringValue
 		if classFlexType != "" {
@@ -801,14 +754,154 @@ extension TestWebViewViewController {
 			}
 		}
 		
+		// Size
+		let size = json["size"].stringValue
+		if size != "" {
+			sumClass.append("TextTypeSize ")
+			sumStyle.append("--text-type-size-value:\(getSizeText(size: size));")
+		}
+		
+		// Color
+		let color = json["color"].stringValue
+		if color != "" {
+			sumStyle.append("color: \(color);")
+		}
+		
+		// Weight
+		let weight = json["weight"].stringValue
+		if weight != "" {
+			sumPStyle.append("font-weight:\(weight)!important;")
+		}
+		
+		// Align
+		switch json["align"].stringValue {
+		case "start":
+			sumClass.append("TextAlignStart ")
+			break
+		case "center":
+			sumClass.append("TextAlignCenter ")
+			break
+		case "end":
+			sumClass.append("TextAlignEnd ")
+			break
+		default:
+			break
+		}
+		
+		// gravity
+		let gravity = json["gravity"].stringValue
+		switch gravity {
+		case "top":
+			sumClass.append("gravityTop ")
+			break
+		case "center":
+			sumClass.append("gravityCenter ")
+			break
+		case "bottom":
+			sumClass.append("gravityBottom ")
+			break
+		default:
+			break
+		}
+		
+		// Margin
+		let marginType = json["margin"].stringValue
+		if marginType != "" {
+			sumStyle.append("--text-type-margin-value:\(getSizeMargin(size: marginType));")
+			sumClass.append("TextTypeMargin ")
+		}
+		
+		// Wrap
+		let wrap = json["wrap"].boolValue
+		if wrap {
+			sumClass.append("TextTypeWrap ")
+		}
+		
+		// style
+		let style = json["style"].stringValue
+		if style != "" {
+			sumPStyle.append("font-style: \(style);")
+		}
+		
+		// decoration
+		let decoration = json["decoration"].stringValue
+		if decoration != "" {
+			sumPStyle.append("text-decoration: \(decoration);")
+		}
+		
+		// position
+		let position = json["position"].stringValue
+		if position == "absolute" {
+			sumClass.append("PositionAbsolute ")
+		}
+		
+		// offset
+		var styleOffsetTop = ""
+		let offsetTop = json["offsetTop"].stringValue
+		if offsetTop != "" {
+			styleOffsetTop = "top: \(offsetTop);"
+			sumStyle.append(styleOffsetTop)
+		}
+		
+		var styleOffsetBottom = ""
+		let offsetBottom = json["offsetBottom"].stringValue
+		if offsetBottom != "" {
+			styleOffsetBottom = "bottom: \(offsetBottom);"
+			sumStyle.append(styleOffsetBottom)
+		}
+		
+		var styleOffsetStart = ""
+		let offsetStart = json["offsetStart"].stringValue
+		if offsetStart != "" {
+			styleOffsetStart = "left: \(offsetStart);"
+			sumStyle.append(styleOffsetStart)
+		}
+		
+		var styleOffsetEnd = ""
+		let offsetEnd = json["offsetEnd"].stringValue
+		if offsetEnd != "" {
+			styleOffsetEnd = "right: \(offsetEnd);"
+			sumStyle.append(styleOffsetEnd)
+		}
+		
+		let textComponent = """
+		 <div class="\(sumClass)" style="\(sumStyle)">
+		 		 <p style="\(sumPStyle)">\(text)</p>
+		 </div>
+		"""
+		return textComponent
+	}
+	
+	func getButtonHTML(json: JSON) -> String {
+		
+		var sumClass: String = "ButtonType "
+		var sumTagAStyle: String = ""
+		
+		// value
+		let actionLabel = json["action"]["label"].stringValue
+		
+		// flex
+		var styleFlexType = ""
+		let flex = json["flex"].stringValue
+		if flex != "" {
+			if flex == "0" {
+				styleFlexType = ""
+				sumClass.append(styleFlexType)
+			} else {
+				styleFlexType = " -webkit-box-flex: \(flex)!important; flex-grow: \(flex)!important; "
+				sumClass.append(styleFlexType)
+			}
+		}
+		
 		// margin
 		var classMarginType = ""
 		var styleMarginType = ""
-		let marginType = json["margin"].stringValue
-		if marginType != "" {
-			classMarginType = "BoxTypeMargin"
-			styleMarginType = "--box-type-margin-value:\(getSizeSpacing(size: marginType));"
-			sumStyle.append(styleMarginType)
+		let margin = json["margin"].stringValue
+		if margin != "" {
+			classMarginType = "ButtonTypeMargin "
+			styleMarginType = "--button-type-margin-value:\(getSizeMargin(size: margin));"
+			sumTagAStyle.append(styleMarginType)
+			sumClass.append(classMarginType)
 		}
 		
 		// height
@@ -821,76 +914,133 @@ extension TestWebViewViewController {
 			}
 		}
 		
-		var positionValue = "relative"
-		let position = json["position"].stringValue
-		if position != "" {
-			positionValue = position
-		}
-		
-		var backUpColorBackground = "transparent"
-		var color: String = ""
-		switch json["style"].stringValue {
+		// style
+		let style = json["style"].stringValue
+		switch style {
 		case "link":
-			color = "#42659a"
-			backUpColorBackground = "transparent"
+			sumClass.append("ButtonStyleLink ")
 			break
 		case "primary":
-			color = "#ffffff"
-			backUpColorBackground = "#17c950"
+			sumClass.append("ButtonStylePrimary ")
 			break
 		case "secondary":
-			color = "#111111"
-			backUpColorBackground = "#dcdfe5"
+			sumClass.append("ButtonStyleSecondary ")
 			break
 		default:
-			color = "#42659a"
-			backUpColorBackground = "transparent"
+			sumClass.append("ButtonStyleLink ")
 		}
 		
-		var colorBackground: String = json["color"].stringValue
-		if colorBackground == "" {
-			colorBackground = backUpColorBackground
+		// color
+		let color = json["color"].stringValue
+		if color != "" {
+			sumTagAStyle.append("background-color:\(color)!important; ")
 		}
 		
-		let radius = "8px"
+		// gravity
+		let gravity = json["gravity"].stringValue
+		switch gravity {
+		case "top":
+			sumClass.append("gravityTop ")
+			break
+		case "center":
+			sumClass.append("gravityCenter ")
+			break
+		case "bottom":
+			sumClass.append("gravityBottom ")
+			break
+		default:
+			break
+		}
+		
+		// position
+		let position = json["position"].stringValue
+		if position == "absolute" {
+			sumClass.append("PositionAbsolute ")
+		}
+		
+		// offset
+		var styleOffsetTop = ""
+		let offsetTop = json["offsetTop"].stringValue
+		if offsetTop != "" {
+			styleOffsetTop = "top: \(offsetTop);"
+			sumTagAStyle.append(styleOffsetTop)
+		}
+		
+		var styleOffsetBottom = ""
+		let offsetBottom = json["offsetBottom"].stringValue
+		if offsetBottom != "" {
+			styleOffsetBottom = "bottom: \(offsetBottom);"
+			sumTagAStyle.append(styleOffsetBottom)
+		}
+		
+		var styleOffsetStart = ""
+		let offsetStart = json["offsetStart"].stringValue
+		if offsetStart != "" {
+			styleOffsetStart = "left: \(offsetStart);"
+			sumTagAStyle.append(styleOffsetStart)
+		}
+		
+		var styleOffsetEnd = ""
+		let offsetEnd = json["offsetEnd"].stringValue
+		if offsetEnd != "" {
+			styleOffsetEnd = "right: \(offsetEnd);"
+			sumTagAStyle.append(styleOffsetEnd)
+		}
 		
 		let buttonComponent = """
 		<div class="\(sumClass)" style="">
-				<a style=""><div>\(actionLabel)</div></a>
+				<a style="\(sumTagAStyle)"><div>\(actionLabel)</div></a>
 		</div>
 		"""
 		return buttonComponent
 	}
 	
+	func getFillerHTML(json: JSON) -> String {
+		let fillerComponent = """
+			<div class="FillerType" style=""></div>
+		"""
+		return fillerComponent
+	}
+	
 	func getSeparatorHTML(json: JSON) -> String {
-		var marginValue = "0px"
+		
+		var sumClass: String = "SeparatorType "
+		var sumStyle: String = ""
+		
+		// margin
 		let margin = json["margin"].stringValue
-		switch margin {
-		case "xs":
-			marginValue = "2px"
-			break
-		case "sm":
-			marginValue = "4px"
-			break
-		case "md":
-			marginValue = "8px"
-			break
-		case "lg":
-			marginValue = "12px"
-			break
-		case "xl":
-			marginValue = "16px"
-			break
-		case "xxl":
-			marginValue = "20px"
-			break
-		default:
-			marginValue = "0px"
+		if margin != "" {
+			sumStyle.append("--separator-type-margin-value:\(getSizeMargin(size: margin));")
+			sumClass.append("SeparatorTypeMargin ")
 		}
+		
+		// color
+		let color = json["color"].stringValue
+		if color != "" {
+			sumStyle.append("border-color: \(color);")
+		}
+		
 		let separatorComponent = """
-				<div style="height: \(marginValue); width: \(marginValue);"> </div>
+			<div class="\(sumClass) " style="\(sumStyle)"></div>
 		"""
 		return separatorComponent
+	}
+	
+	func getSpacerHTML(json: JSON) -> String  {
+		var sumClass: String = "SpacerType "
+		var sumStyle: String = ""
+		
+		// size
+		let size = json["size"].stringValue
+		if size != "" {
+			sumClass.append("SpacerTypeSize ")
+			sumStyle.append("--spacer-size-value:\(getSizeSpacing(size: size));")
+		}
+		
+		let spacerComponent = """
+			div class="\(sumClass)" style="\(sumStyle)"></div>
+		"""
+		return spacerComponent
 	}
 }
 
